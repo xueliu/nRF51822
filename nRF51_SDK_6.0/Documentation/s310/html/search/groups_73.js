@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['sdk_20common_20libraries',['SDK Common Libraries',['../a00635.html',1,'']]],
+  ['scheduler',['Scheduler',['../a00463.html',1,'']]],
+  ['speed_20and_20cadence_20control_20point',['Speed and Cadence Control Point',['../a00610.html',1,'']]],
+  ['security_20set_2dup_20_26_20status_20related',['Security Set-Up &amp; Status Related',['../a00618.html',1,'']]],
+  ['slip_20module',['SLIP module',['../a00472.html',1,'']]],
+  ['software_20controlled_20spi_20slave_20driver_2e',['Software controlled SPI Slave driver.',['../a00457.html',1,'']]],
+  ['software_20controlled_20twi_20master_20driver',['Software controlled TWI Master driver',['../a00458.html',1,'']]],
+  ['sdio_20driver',['SDIO driver',['../a00449.html',1,'']]],
+  ['simple_20uart_20driver',['Simple UART driver',['../a00455.html',1,'']]],
+  ['synaptics_20touchpad_20driver_2e',['Synaptics Touchpad driver.',['../a00450.html',1,'']]],
+  ['s310_20_28ant_20and_20ble_20peripheral_29',['S310 (ANT and BLE peripheral)',['../a00657.html',1,'']]],
+  ['sdk_20error_20codes',['SDK Error codes',['../a00481.html',1,'']]],
+  ['softdevice_20event_20handler',['SoftDevice Event Handler',['../a00480.html',1,'']]],
+  ['spi_20master_20driver',['SPI Master driver',['../a00456.html',1,'']]],
+  ['svc_20return_20values_20specific_20to_20gap',['SVC return values specific to GAP',['../a00495.html',1,'']]],
+  ['svc_20return_20values_20specific_20to_20gattc',['SVC return values specific to GATTC',['../a00520.html',1,'']]],
+  ['svc_20return_20values_20specific_20to_20gatts',['SVC return values specific to GATTS',['../a00521.html',1,'']]],
+  ['svc_20return_20values_20specific_20to_20l2cap',['SVC return values specific to L2CAP',['../a00529.html',1,'']]],
+  ['softdevice_20global_20error_20codes',['SoftDevice Global Error Codes',['../a00536.html',1,'']]],
+  ['softdevice_20manager_20api',['SoftDevice Manager API',['../a00538.html',1,'']]],
+  ['softdevice_20manager_20error_20codes',['SoftDevice Manager Error Codes',['../a00539.html',1,'']]],
+  ['soc_20library_20api',['SoC Library API',['../a00540.html',1,'']]],
+  ['soc_20library_20error_20codes',['SoC Library Error Codes',['../a00541.html',1,'']]],
+  ['service_20uuid_20definitions',['Service UUID definitions',['../a00612.html',1,'']]]
+];
