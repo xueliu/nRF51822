@@ -371,7 +371,7 @@
             <vShortWch>0</vShortWch>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>NRF51 BOARD_PCA10001</Define>
+              <Define>NRF51 BOARD_AKII</Define>
               <Undefine></Undefine>
               <IncludePath>..\..\..\..\Include</IncludePath>
             </VariousControls>
@@ -424,9 +424,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>::Device</GroupName>
-        </Group>
-        <Group>
           <GroupName>lib</GroupName>
           <Files>
             <File>
@@ -435,6 +432,9 @@
               <FilePath>..\..\..\..\Source\simple_uart\simple_uart.c</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>::Device</GroupName>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>
@@ -858,9 +858,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>::Device</GroupName>
-        </Group>
-        <Group>
           <GroupName>lib</GroupName>
           <Files>
             <File>
@@ -869,6 +866,9 @@
               <FilePath>..\..\..\..\Source\simple_uart\simple_uart.c</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>::Device</GroupName>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>
@@ -1292,9 +1292,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>::Device</GroupName>
-        </Group>
-        <Group>
           <GroupName>lib</GroupName>
           <Files>
             <File>
@@ -1303,6 +1300,9 @@
               <FilePath>..\..\..\..\Source\simple_uart\simple_uart.c</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>::Device</GroupName>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>
@@ -1726,9 +1726,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>::Device</GroupName>
-        </Group>
-        <Group>
           <GroupName>lib</GroupName>
           <Files>
             <File>
@@ -1737,6 +1734,9 @@
               <FilePath>..\..\..\..\Source\simple_uart\simple_uart.c</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>::Device</GroupName>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>
@@ -2160,9 +2160,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>::Device</GroupName>
-        </Group>
-        <Group>
           <GroupName>lib</GroupName>
           <Files>
             <File>
@@ -2171,6 +2168,9 @@
               <FilePath>..\..\..\..\Source\simple_uart\simple_uart.c</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>::Device</GroupName>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>
@@ -2594,9 +2594,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>::Device</GroupName>
-        </Group>
-        <Group>
           <GroupName>lib</GroupName>
           <Files>
             <File>
@@ -2605,6 +2602,9 @@
               <FilePath>..\..\..\..\Source\simple_uart\simple_uart.c</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>::Device</GroupName>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>
