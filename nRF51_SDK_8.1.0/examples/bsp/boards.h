@@ -34,6 +34,8 @@
   #include "wt51822.h"
 #elif defined(BOARD_CUSTOM)
   #include "custom_board.h"
+#elif defined(BOARD_AKII)
+  #include "nrf51822akii.h.h"
 #else
 #error "Board is not defined"
 #endif
