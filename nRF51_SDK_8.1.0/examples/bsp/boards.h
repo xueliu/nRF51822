@@ -35,7 +35,7 @@
 #elif defined(BOARD_CUSTOM)
   #include "custom_board.h"
 #elif defined(BOARD_AKII)
-  #include "nrf51822akii.h.h"
+  #include "nrf51822akii.h"
 #else
 #error "Board is not defined"
 #endif
