@@ -58,7 +58,7 @@
 #define BSP_BUTTON_0_MASK (1<<BSP_BUTTON_0)
 #define BSP_BUTTON_1_MASK (1<<BSP_BUTTON_1)
 
-#define BUTTONS_MASK   0x001E0000
+#define BUTTONS_MASK   0x00030000
 
 #define RX_PIN_NUMBER  11
 #define TX_PIN_NUMBER  9
@@ -71,15 +71,15 @@
 #define SPIS_MOSI_PIN  22    // SPI MOSI signal. 
 #define SPIS_SCK_PIN   23    // SPI SCK signal. 
 
-#define SPIM0_SCK_PIN       23     /**< SPI clock GPIO pin number. */
-#define SPIM0_MOSI_PIN      20     /**< SPI Master Out Slave In GPIO pin number. */
-#define SPIM0_MISO_PIN      22     /**< SPI Master In Slave Out GPIO pin number. */
-#define SPIM0_SS_PIN        21     /**< SPI Slave Select GPIO pin number. */
+#define SPIM0_SCK_PIN       23u     /**< SPI clock GPIO pin number. */
+#define SPIM0_MOSI_PIN      20u     /**< SPI Master Out Slave In GPIO pin number. */
+#define SPIM0_MISO_PIN      22u     /**< SPI Master In Slave Out GPIO pin number. */
+#define SPIM0_SS_PIN        21u     /**< SPI Slave Select GPIO pin number. */
 
-#define SPIM1_SCK_PIN       16     /**< SPI clock GPIO pin number. */
-#define SPIM1_MOSI_PIN      18     /**< SPI Master Out Slave In GPIO pin number. */
-#define SPIM1_MISO_PIN      17     /**< SPI Master In Slave Out GPIO pin number. */
-#define SPIM1_SS_PIN        19     /**< SPI Slave Select GPIO pin number. */
+#define SPIM1_SCK_PIN       29u     /**< SPI clock GPIO pin number. */
+#define SPIM1_MOSI_PIN      24u     /**< SPI Master Out Slave In GPIO pin number. */
+#define SPIM1_MISO_PIN      28u     /**< SPI Master In Slave Out GPIO pin number. */
+#define SPIM1_SS_PIN        25u     /**< SPI Slave Select GPIO pin number. */
 
 // serialization APPLICATION board
 #define SER_APP_RX_PIN              20    // UART RX pin number.

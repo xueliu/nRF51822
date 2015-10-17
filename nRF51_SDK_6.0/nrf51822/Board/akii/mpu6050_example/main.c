@@ -27,36 +27,31 @@
 #include "simple_uart.h"
 #include "nrf_gpio.h"
 #include "boards.h"
-#include "twi_master.h"
 #include "mpu6050.h"
+#include "twi_master.h"
+#include "nrf_delay.h"
 
 //#define ENABLE_LOOPBACK_TEST           /*!< if defined, then this example will be a loopback test, which means that TX should be connected to RX to get data loopback */
 
 #define ERROR_PIN                (LED_0)   /*!< gpio pin number to show error if loopback is enabled */
-#define TX_PIN 				(LED_1)
-#define RX_PIN 				(LED_2)
 #define MAX_TEST_DATA_BYTES      (15U) /*!< max number of test bytes to be used for tx and rx */
-
-#define MPU6050_ADDR (0x68) /*!< address of mpu6050 */
 
 #ifndef ENABLE_LOOPBACK_TEST
 
 /** @brief Function for sending ' Exit!' string to UART.
 Execution is blocked until UART peripheral detects all characters have been sent.
  */
-static __INLINE void uart_quit()
-{
-  simple_uart_putstring((const uint8_t *)" \n\rExit!\n\r");
-}
+//static __INLINE void uart_quit()
+//{
+//  simple_uart_putstring((const uint8_t *)" \n\rExit!\n\r");
+//}
 
 /** @brief Function for sending 'Start: ' string to UART.
 Execution is blocked until UART peripheral detects all characters have been sent.
  */
 static __INLINE void uart_start()
 {
-	nrf_gpio_pin_set(TX_PIN);
   simple_uart_putstring((const uint8_t *)" \n\rStart: ");
-	nrf_gpio_pin_clear(TX_PIN);
 }
 
 #else
@@ -111,43 +106,43 @@ static void uart_loopback_test()
  */
 int main(void)
 {
-  simple_uart_config(RTS_PIN_NUMBER, TX_PIN_NUMBER, CTS_PIN_NUMBER, RX_PIN_NUMBER, HWFC);
-	simple_uart_putstring((const uint8_t *)" \n Hello, world ");
-	nrf_gpio_cfg_output(TX_PIN);
-	nrf_gpio_cfg_output(RX_PIN);
-	
-	twi_master_init();
-	
-	if(mpu6050_init(MPU6050_ADDR)) {
-		simple_uart_putstring((const uint8_t *)"\n mpu6050 found!");
-	} else {
-		simple_uart_putstring((const uint8_t *)"\n mpu6050 not found!");
-	}
-	
-	if(mpu6050_verify_product_id()) {
-		simple_uart_putstring((const uint8_t *)"\n true mpu6050 found!");
-	} else {
-		simple_uart_putstring((const uint8_t *)"\n another mpu6050 not found!");
-	}
-	
+  uint8_t id;
+	int16_t tem1[3],tem2[3];
+	simple_uart_config(RTS_PIN_NUMBER, TX_PIN_NUMBER, CTS_PIN_NUMBER, RX_PIN_NUMBER, HWFC);
+
 #ifndef ENABLE_LOOPBACK_TEST
 
   uart_start();
+	twi_master_init();
+	
+	
+	printf("mpu6050 test\r\n");
+	if(mpu6050_init(0x68) == false)
+	{
+			printf("mpu6050 init fail\r\n");
+	}
+	mpu6050_register_read(0x75U, &id, 1);
+	printf("mpu6050 id is %d \r\n",id);
   while(true)
   {
-		nrf_gpio_pin_set(RX_PIN);
-    uint8_t cr = simple_uart_get();
-		nrf_gpio_pin_clear(RX_PIN);
+		MPU6050_ReadAcc( &tem1[0], &tem1[1] , &tem1[2] );
+		MPU6050_ReadGyro(&tem2[0] , &tem2[1] , &tem2[2] );
 		
-		nrf_gpio_pin_set(TX_PIN);
+		printf("ACC:  %d	%d	%d	",tem1[0],tem1[1],tem1[2]);
+		printf("GYRO: %d	%d	%d	\r\n",tem2[0],tem2[1],tem2[2]);
+		
+//		nrf_delay_us(10000);
+//		nrf_delay_ms(10000);
+//		nrf_delay_ms(10000);
+		
+		/*uint8_t cr = simple_uart_get();
     simple_uart_put(cr);
-		nrf_gpio_pin_clear(TX_PIN);
-		
+
     if(cr == 'q' || cr == 'Q')
     {
       uart_quit();
       while(1){}
-    }
+    }*/
   }
 
 #else
@@ -155,8 +150,6 @@ int main(void)
 
   // ERROR_PIN configure as output
   nrf_gpio_cfg_output(ERROR_PIN);
-	
-	
   while(true)
   {
     uart_loopback_test();
@@ -164,6 +157,17 @@ int main(void)
 #endif
 }
 
+
+int fputc(int ch)
+{
+	NRF_UART0->TXD = (uint8_t)ch;
+  while (NRF_UART0->EVENTS_TXDRDY!=1)
+  {
+    // Wait for TXD data to be sent
+  }
+  NRF_UART0->EVENTS_TXDRDY=0;
+	return ch;
+}
 /**
  *@}
  **/

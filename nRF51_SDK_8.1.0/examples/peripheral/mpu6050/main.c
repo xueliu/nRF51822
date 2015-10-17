@@ -27,6 +27,9 @@
 #include "nrf_delay.h"
 #include "nrf.h"
 #include "bsp.h"
+#include "nrf_drv_twi.h"
+#include "app_util_platform.h"
+#include "mpu6050.h"
 
 #include "SEGGER_RTT.h"
 
@@ -35,13 +38,27 @@
  */
 int main(void)
 {
-		int variable = 0;
-		while(1) {
-//				SEGGER_RTT_WriteString(0, "Hello World!\n");
-//				SEGGER_RTT_printf(0, "variable value: %d\n", variable++);
-				nrf_delay_ms(1000);
-				printf("variable value: %d\n", variable++);
-		}
+	uint32_t err_code;
+	int16_t tem1[3];
+//		uint8_t tx_data[] = {'a', 'b', 'c', 'd', 'e'};
+		
+	const nrf_drv_twi_t 		twi 		= NRF_DRV_TWI_INSTANCE(0);
+	const nrf_drv_twi_config_t 	twi_config 	= NRF_DRV_TWI_DEFAULT_CONFIG(0);
+	err_code = nrf_drv_twi_init(&twi, &twi_config, NULL);
+	APP_ERROR_CHECK(err_code);
+	nrf_drv_twi_enable(&twi);
+	
+//	err_code = nrf_drv_twi_tx(&twi, MPU6050_DEFAULT_ADDRESS, tx_data, sizeof(tx_data), false);
+//	APP_ERROR_CHECK(err_code);
+	
+	mpu6050_init(&twi);
+
+	while(true)
+	{
+		MPU6050_ReadAcc(&twi, &tem1[0], &tem1[1] , &tem1[2] );
+		nrf_delay_ms(1000);
+		printf("ACC:  %d	%d	%d	\n\r",tem1[0],tem1[1],tem1[2]);
+	}
 }
 
 
