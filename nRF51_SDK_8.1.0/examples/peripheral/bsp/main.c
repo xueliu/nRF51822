@@ -48,33 +48,60 @@ void uart_error_handle(app_uart_evt_t * p_event)
 
 /**@brief Function for handling bsp events.
  */
+
+//void bsp_evt_handler(bsp_event_t evt)
+//{
+//    uint32_t err_code;
+//    switch (evt)
+//    {
+//        case BSP_EVENT_KEY_0:
+
+//                if (actual_state != BSP_INDICATE_FIRST)
+//                    actual_state--;
+//                else
+//                    actual_state = BSP_INDICATE_LAST;
+//                break;
+
+//        case BSP_EVENT_KEY_1:
+
+//                if (actual_state != BSP_INDICATE_LAST)
+//                    actual_state++;
+//                else
+//                    actual_state = BSP_INDICATE_FIRST;
+//                break;
+
+//        default:
+//                return; // no implementation needed
+//    }
+
+//    err_code = bsp_indication_text_set(actual_state, indications_list[actual_state]);
+//    APP_ERROR_CHECK(err_code);
+//}
 void bsp_evt_handler(bsp_event_t evt)
 {
-    uint32_t err_code;
-    switch (evt)
-    {
-        case BSP_EVENT_KEY_0:
+        switch (evt)
+        {
+            case BSP_EVENT_KEY_0: //On Button 1 press
+                LEDS_INVERT(BSP_LED_0_MASK); //Changes the current state of LED_1
+                break;
 
-            if (actual_state != BSP_INDICATE_FIRST)
-                actual_state--;
-            else
-                actual_state = BSP_INDICATE_LAST;
-            break;
+            case BSP_EVENT_KEY_1: //On Button 2 press
+                LEDS_INVERT(BSP_LED_1_MASK); //Changes the current state of LED_2
+                break;
 
-        case BSP_EVENT_KEY_1:
+            case BSP_EVENT_KEY_2: //On Button 3 press
+                LEDS_INVERT(BSP_LED_2_MASK); //Changes the current state of LED_3
+                break;
 
-            if (actual_state != BSP_INDICATE_LAST)
-                actual_state++;
-            else
-                actual_state = BSP_INDICATE_FIRST;
-            break;
+            case BSP_EVENT_KEY_3:    //On Button 4 press                
+                LEDS_INVERT(BSP_LED_3_MASK); //Changes the current state of LED_4
+                break;
 
-        default:
-            return; // no implementation needed
-    }
-
-    err_code = bsp_indication_text_set(actual_state, indications_list[actual_state]);
-    APP_ERROR_CHECK(err_code);
+            default:
+                return; // no implementation needed
+        }
+        uint32_t err_code = NRF_SUCCESS;
+        APP_ERROR_CHECK(err_code);
 }
 
 

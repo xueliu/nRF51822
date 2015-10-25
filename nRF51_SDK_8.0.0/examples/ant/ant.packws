@@ -1,0 +1,334 @@
+{
+  "appskeleton_ant": {
+    "_workspace": {
+      "_files": [
+        "./main.c"
+      ],
+      "_toolchains": [
+        "armgcc",
+        "keil",
+        "keil5",
+        "iar"
+      ],
+      "_links": [
+        "bsp"
+      ],
+      "_projects": [
+        {
+          "_dir": "pca10028",
+          "_name": "s210_pca10028",
+          "_links": [
+            "s210",
+            "pca10028"
+          ],
+          "_defines": [
+            "ANT_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac",
+              "_links": [
+                "nrf51422_xxac"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "appskeleton_ant_w_s310": {
+    "_workspace": {
+      "_files": [
+        "./main.c"
+      ],
+      "_toolchains": [
+        "armgcc",
+        "keil",
+        "keil5",
+        "iar"
+      ],
+      "_links": [
+        "bsp"
+      ],
+      "_projects": [
+        {
+          "_dir": "pca10028",
+          "_name": "s210_pca10028",
+          "_links": [
+            "s210",
+            "pca10028"
+          ],
+          "_defines": [
+            "ANT_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac",
+              "_links": [
+                "nrf51422_xxac"
+              ]
+            }
+          ]
+        },
+        {
+          "_dir": "pca10031",
+          "_name": "s210_pca10031",
+          "_links": [
+            "s210",
+            "pca10031"
+          ],
+          "_defines": [
+            "ANT_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac",
+              "_links": [
+                "nrf51422_xxac"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "appskeleton_ant_no_bsp": {
+    "_workspace": {
+      "_files": [
+        "./main.c"
+      ],
+      "_projects": [
+        {
+          "_dir": "pca10028",
+          "_name": "s210_pca10028",
+          "_links": [
+            "s210",
+            "pca10028"
+          ],
+          "_defines": [
+            "ANT_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac",
+              "_links": [
+                "nrf51422_xxac"
+              ]
+            }
+          ]
+        },
+        {
+          "_dir": "pca10031",
+          "_name": "s210_pca10031",
+          "_links": [
+            "s210",
+            "pca10031"
+          ],
+          "_defines": [
+            "ANT_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac",
+              "_links": [
+                "nrf51422_xxac"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "appskeleton_ant_pca10028_only": {
+    "_workspace": {
+      "_files": [
+        "./main.c"
+      ],
+      "_links": [
+        "bsp"
+      ],
+      "_projects": [
+        {
+          "_dir": "pca10028",
+          "_name": "pca10028",
+          "_links": [
+            "s210",
+            "pca10028"
+          ],
+          "_defines": [
+            "ANT_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac",
+              "_links": [
+                "nrf51422_xxac"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "appskeleton_ant_pca10028_only_w_s310": {
+    "_workspace": {
+      "_files": [
+        "./main.c"
+      ],
+      "_links": [
+        "bsp"
+      ],
+      "_projects": [
+        {
+          "_dir": "pca10028\\s210",
+          "_name": "s210_pca10028",
+          "_links": [
+            "s210",
+            "pca10028"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac_s210",
+              "_links": [
+                "nrf51422_xxac"
+              ]
+            }
+          ]
+        },
+        {
+          "_dir": "pca10028\\s310",
+          "_name": "s310_pca10028",
+          "_links": [
+            "s310",
+            "pca10028"
+          ],
+          "_defines": [
+            "BLE_STACK_SUPPORT_REQD",
+            "ANT_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac_s310",
+              "_links": [
+                "nrf51422_xxac"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "appskeleton_ant_bsp_defines": {
+    "_workspace": {
+      "_files": [
+        "./main.c"
+      ],
+      "_links": [
+        "bsp:defines"
+      ],
+      "_projects": [
+        {
+          "_dir": "pca10028",
+          "_name": "s210_pca10028",
+          "_links": [
+            "s210",
+            "pca10028"
+          ],
+          "_defines": [
+            "ANT_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac",
+              "_links": [
+                "nrf51422_xxac"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "appskeleton_ant_bsp_defines_w_s310": {
+    "_workspace": {
+      "_files": [
+        "./main.c"
+      ],
+      "_links": [
+        "bsp:defines"
+      ],
+      "_projects": [
+        {
+          "_dir": "pca10028\\s210",
+          "_name": "s210_pca10028",
+          "_links": [
+            "s210",
+            "pca10028"
+          ],
+          "_defines": [
+            "ANT_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac",
+              "_links": [
+                "nrf51422_xxac"
+              ]
+            }
+          ]
+        },
+        {
+          "_dir": "pca10028\\s310",
+          "_name": "s310_pca10028",
+          "_links": [
+            "s310",
+            "pca10028"
+          ],
+          "_defines": [
+            "BLE_STACK_SUPPORT_REQD",
+            "ANT_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac",
+              "_links": [
+                "nrf51422_xxac"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "appskeleton_ant_bsp_defines_all": {
+    "_workspace": {
+      "_files": [
+        "./main.c"
+      ],
+      "_links": [
+        "bsp:defines"
+      ],
+      "_projects": [
+        {
+          "_dir": "pca10028\\s210",
+          "_name": "s210_pca10028",
+          "_links": [
+            "s210",
+            "pca10028"
+          ],
+          "_defines": [
+            "ANT_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac",
+              "_links": [
+                "nrf51422_xxac"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

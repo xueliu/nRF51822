@@ -1,0 +1,26 @@
+var a01032 =
+[
+    [ "ADNS2080 driver", "a00749.html", "a00749" ],
+    [ "Cherry 8x16 keyboard matrix driver", "a00750.html", "a00750" ],
+    [ "DS1624 digital temperature sensor driver", "a00751.html", "a00751" ],
+    [ "MPU6050 gyro/accelerometer driver", "a00752.html", "a00752" ],
+    [ "Synaptics Touchpad driver.", "a00753.html", "a00753" ],
+    [ "ADC HAL", "a00754.html", "a00754" ],
+    [ "AES ECB encryption", "a00756.html", "a00756" ],
+    [ "GPIO abstraction", "a00757.html", "a00757" ],
+    [ "GPIOTE abstraction", "a00758.html", "a00758" ],
+    [ "Non-volatile memory controller", "a00760.html", "a00760" ],
+    [ "TEMP (temperature) abstraction", "a00765.html", null ],
+    [ "Timer HAL and driver", "a00768.html", "a00768" ],
+    [ "QDEC HAL and driver", "a00770.html", "a00770" ],
+    [ "Clock HAL and driver", "a00772.html", "a00772" ],
+    [ "LPCOMP HAL and driver", "a00774.html", "a00774" ],
+    [ "WDT HAL and driver", "a00776.html", "a00776" ],
+    [ "RTC HAL and driver", "a00782.html", "a00782" ],
+    [ "SDIO driver", "a00784.html", "a00784" ],
+    [ "SPI Master driver", "a00785.html", "a00785" ],
+    [ "Software controlled SPI Slave driver.", "a00786.html", "a00786" ],
+    [ "Software controlled TWI Master driver", "a00787.html", "a00787" ],
+    [ "RNG HAL and driver", "a00789.html", "a00789" ],
+    [ "PPI HAL and driver", "a00791.html", "a00791" ]
+];

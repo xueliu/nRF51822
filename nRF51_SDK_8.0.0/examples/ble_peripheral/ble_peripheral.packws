@@ -1,0 +1,425 @@
+{
+  "appskeleton_s110_no_serapp": {
+    "_workspace": {
+      "_links": [
+        "s110",
+        "ble_service_common",
+        "bsp",
+        "app_uart:fifo"
+      ],
+      "_files": [
+        ".\\main.c"
+      ],
+      "_projects": [
+        {
+          "_dir": "pca10028",
+          "_name": "s110_pca10028",
+          "_links": [
+            "pca10028"
+          ],
+          "_defines": [
+            "BLE_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac_s110"
+            },
+            {
+              "_name": "flash_softdevice",
+              "_links": [
+                "softdevice_hex"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "appskeleton_s110_no_serapp_no_uart": {
+    "_workspace": {
+      "_links": [
+        "s110",
+        "ble_service_common",
+        "bsp"
+      ],
+      "_files": [
+        ".\\main.c"
+      ],
+      "_projects": [
+        {
+          "_dir": "pca10028",
+          "_name": "s110_pca10028",
+          "_links": [
+            "pca10028"
+          ],
+          "_defines": [
+            "BLE_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac_s110"
+            },
+            {
+              "_name": "flash_softdevice",
+              "_links": [
+                "softdevice_hex"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "appskeleton_ble_peripheral_template": {
+    "_workspace": {
+      "_links": [
+        "ble_service_common",
+        "bsp"
+      ],
+      "_files": [
+        ".\\main.c"
+      ],
+      "_projects": [
+        {
+          "_dir": "pca10028\\s110",
+          "_name": "s110_pca10028",
+          "_links": [
+            "s110",
+            "pca10028"
+          ],
+          "_defines": [
+            "BLE_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac_s110"
+            },
+            {
+              "_name": "flash_softdevice",
+              "_links": [
+                "softdevice_hex"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "appskeleton_ble_peripheral_all": {
+    "_workspace": {
+      "_files": [
+        ".\\main.c"
+      ],
+      "_links": [
+        "ble_service_common",
+        "bsp"
+      ],
+      "_projects": [
+        {
+          "_dir": "pca10028\\s110",
+          "_name": "s110_pca10028",
+          "_links": [
+            "s110",
+            "pca10028",
+            "app_uart:fifo"
+          ],
+          "_defines": [
+            "BLE_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac_s110"
+            },
+            {
+              "_name": "flash_softdevice",
+              "_links": [
+                "softdevice_hex"
+              ]
+            }
+          ]
+        },
+        {
+          "_dir": "pca10031\\s110",
+          "_name": "s110_pca10031",
+          "_links": [
+            "s110",
+            "pca10031",
+            "app_uart:fifo"
+          ],
+          "_defines": [
+            "BLE_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac_s110"
+            },
+            {
+              "_name": "flash_softdevice",
+              "_links": [
+                "softdevice_hex"
+              ]
+            }
+          ]
+        },
+        {
+          "_dir": "pca10028\\s110_with_dfu",
+          "_name": "s110_with_dfu_pca10028",
+          "_toolchains": [
+            "armgcc",
+            "keil",
+            "keil5"
+          ],
+          "_links": [
+            "s110",
+            "dfu_app_handler",
+            "ble_dfu",
+            "dfu_bootloader_util",
+            "pca10028",
+            "app_uart:fifo"
+          ],
+          "_defines": [
+            "BLE_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac_s110",
+              "_defines": [
+                "BLE_DFU_APP_SUPPORT"
+              ]
+            },
+            {
+              "_name": "flash_softdevice",
+              "_links": [
+                "softdevice_hex"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "appskeleton_ble_peripheral_bsp_uart": {
+    "_workspace": {
+      "_files": [
+        ".\\main.c"
+      ],
+      "_links": [
+        "ble_service_common",
+        "app_uart:fifo",
+        "bsp:uart"
+      ],
+      "_projects": [
+        {
+          "_dir": "pca10028\\s110",
+          "_name": "s110_pca10028",
+          "_links": [
+            "s110",
+            "pca10028"
+          ],
+          "_defines": [
+            "BLE_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac_s110"
+            },
+            {
+              "_name": "flash_softdevice",
+              "_links": [
+                "softdevice_hex"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "appskeleton_ble_peripheral_standard": {
+    "_workspace": {
+      "_files": [
+        ".\\main.c"
+      ],
+      "_links": [
+        "ble_service_common",
+        "bsp"
+      ],
+      "_projects": [
+        {
+          "_dir": "pca10028\\s110",
+          "_name": "s110_pca10028",
+          "_links": [
+            "s110",
+            "pca10028",
+            "app_uart:fifo"
+          ],
+          "_defines": [
+            "BLE_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac_s110"
+            },
+            {
+              "_name": "flash_softdevice",
+              "_links": [
+                "softdevice_hex"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "appskeleton_ble_peripheral_standard_w_s310": {
+    "_workspace": {
+      "_files": [
+        ".\\main.c"
+      ],
+      "_links": [
+        "ble_service_common",
+        "bsp"
+      ],
+      "_projects": [
+        {
+          "_dir": "pca10028\\s110",
+          "_name": "s110_pca10028",
+          "_links": [
+            "s110",
+            "pca10028",
+            "app_uart:fifo"
+          ],
+          "_defines": [
+            "BLE_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac_s110"
+            },
+            {
+              "_name": "flash_softdevice",
+              "_links": [
+                "softdevice_hex"
+              ]
+            }
+          ]
+        },
+        {
+          "_dir": "pca10028\\s310",
+          "_name": "s310_pca10028",
+          "_links": [
+            "s310",
+            "pca10028"
+          ],
+          "_defines": [
+            "BLE_STACK_SUPPORT_REQD"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac_s310"
+            },
+            {
+              "_name": "flash_softdevice",
+              "_links": [
+                "softdevice_hex"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "appskeleton_s110_connectivity": {
+    "_workspace": {
+      "_files": [
+        "./main.c"
+      ],
+      "_links": [
+        "sercon_mw_dispatcher",
+        "sercon_mw_s110",
+        "sercon_codecs_s110_ble_evt_mux",
+        "sercon_engine",
+        "s110",
+        "app_scheduler:serialization_connectivity",
+        "bsp:defines"
+      ],
+      "_defines": [
+        "BLE_STACK_SUPPORT_REQD"
+      ],
+      "_projects": [
+        {
+          "_dir": "pca10028\\ser_s110_uart",
+          "_name": "s110_uart_pca10028",
+          "_links": [
+            "ser_phy:uart",
+            "pca10028"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac_s110"
+            }
+          ]
+        },
+        {
+          "_toolchains": [
+            "armgcc",
+            "keil",
+            "keil5"
+          ],
+          "_dir": "pca10028\\ser_s110_uart_stm",
+          "_name": "s110_uart_stm_pca10028",
+          "_links": [
+            "ser_phy:uart_stm_conn",
+            "pca10028"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac_s110"
+            }
+          ]
+        },
+        {
+          "_dir": "pca10028\\ser_s110_hci",
+          "_name": "s110_hci_pca10028",
+          "_links": [
+            "ser_phy:hci",
+            "pca10028"
+          ],
+          "_defines": [
+            "HCI_TIMER2"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac_s110"
+            }
+          ]
+        },
+        {
+          "_dir": "pca10028\\ser_s110_spi",
+          "_name": "s110_spi_pca10028",
+          "_links": [
+            "ser_phy:spi_slave",
+            "pca10028"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac_s110"
+            }
+          ]
+        },
+        {
+          "_dir": "pca10028\\ser_s110_spi_5W",
+          "_name": "s110_spi_5W_pca10028",
+          "_links": [
+            "ser_phy:spi_5W_slave",
+            "pca10028"
+          ],
+          "_targets": [
+            {
+              "_name": "nrf51422_xxac_s110"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

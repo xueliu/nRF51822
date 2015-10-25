@@ -1,0 +1,10 @@
+s130_nrf51822_0.9.0-1.alpha
+
+This release consists of the following:
+- This readme file
+- The s130_nrf51822_0.9.0-1.alpha SoftDevice (binary hex file)
+- The s130_nrf51822_0.9.0-1.alpha API (SoftDevice header files)
+- The s130_nrf51822_0.9.0-1.alpha release notes
+- The s130_nrf51822_0.9.0-1.alpha licence agreement
+- The demo app
+

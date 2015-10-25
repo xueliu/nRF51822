@@ -1,0 +1,26 @@
+var a01033 =
+[
+    [ "Alert Notification Service Client", "a00952.html", "a00952" ],
+    [ "Battery Service", "a00953.html", "a00953" ],
+    [ "Blood Pressure Service", "a00954.html", "a00954" ],
+    [ "Cycling Speed and Cadence Service", "a00955.html", "a00955" ],
+    [ "Device Firmware Update Service", "a00957.html", "a00957" ],
+    [ "Device Information Service", "a00958.html", "a00958" ],
+    [ "Glucose Service", "a00960.html", "a00960" ],
+    [ "Glucose Database Service", "a00961.html", "a00961" ],
+    [ "Human Interface Device Service", "a00962.html", "a00962" ],
+    [ "Heart Rate Service", "a00963.html", "a00963" ],
+    [ "Health Thermometer Service", "a00964.html", "a00964" ],
+    [ "Immediate Alert Service", "a00965.html", "a00965" ],
+    [ "Immediate Alert Service Client", "a00966.html", "a00966" ],
+    [ "Link Loss Service", "a00967.html", "a00967" ],
+    [ "Running Speed and Cadence Service", "a00968.html", "a00968" ],
+    [ "Speed and Cadence Control Point", "a00969.html", "a00969" ],
+    [ "Common service definitions", "a00971.html", "a00971" ],
+    [ "TX Power Service", "a00975.html", "a00975" ],
+    [ "Battery Service Client", "a01000.html", "a01000" ],
+    [ "Current Time Service client", "a01005.html", "a01005" ],
+    [ "Heart Rate Service Client", "a01006.html", "a01006" ],
+    [ "Nordic UART Service", "a01011.html", "a01011" ],
+    [ "Apple Notification Service Client", "a01028.html", "a01028" ]
+];
