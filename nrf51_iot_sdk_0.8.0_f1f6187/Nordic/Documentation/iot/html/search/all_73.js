@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['server',['Server',['../a00034.html',1,'iot_sdk_app_coap']]],
+  ['server',['Server',['../a00037.html',1,'iot_sdk_app_dtls']]],
+  ['server',['Server',['../a00047.html',1,'iot_sdk_app_ipv6_stack_udp_client_server']]],
+  ['server',['Server',['../a00039.html',1,'iot_sdk_app_lwip_tcp']]],
+  ['server',['Server',['../a00042.html',1,'iot_sdk_app_lwip_udp_client_server']]],
+  ['sntp',['SNTP',['../a00029.html',1,'iot_examples']]],
+  ['simple_20network_20time_20protocol_20_28sntp_29',['Simple Network Time Protocol (SNTP)',['../a00016.html',1,'lib_iot_stack']]],
+  ['sdk_5fcommon_5ferror_5fbase',['SDK_COMMON_ERROR_BASE',['../a00232.html#ga1fa2dae6c4a22d6592184236f7f8ed4e',1,'sdk_errors.h']]],
+  ['sdk_20error_20codes',['SDK Error codes',['../a00231.html',1,'']]],
+  ['sdk_5ferror_5fbase',['SDK_ERROR_BASE',['../a00232.html#ga3756b7defda416b28928be1af33c4257',1,'sdk_errors.h']]],
+  ['sntp_20client',['SNTP Client',['../a00219.html',1,'']]],
+  ['sntp_5fclient_5fcb_5fparam_5ft',['sntp_client_cb_param_t',['../a00104.html',1,'']]],
+  ['sntp_5fclient_5finit',['sntp_client_init',['../a00219.html#ga9237f25537470d078b458cb589708147',1,'sntp_client.h']]],
+  ['sntp_5fclient_5finit_5fparam_5ft',['sntp_client_init_param_t',['../a00105.html',1,'']]],
+  ['sntp_5fclient_5flocal_5ftime_5fget',['sntp_client_local_time_get',['../a00219.html#ga4e03b8f22fd99c0e89e658481fd049d1',1,'sntp_client.h']]],
+  ['sntp_5fclient_5fserver_5fquery',['sntp_client_server_query',['../a00219.html#ga74c0640649e18bc02466193522ca5bdc',1,'sntp_client.h']]],
+  ['sntp_5fclient_5ftimeout_5fprocess',['sntp_client_timeout_process',['../a00219.html#ga034a2aacb1ef3e2b173393ff08809e11',1,'sntp_client.h']]],
+  ['sntp_5fclient_5funinitialize',['sntp_client_uninitialize',['../a00219.html#gaac1dd780a4879e559cfac4614042bd0e',1,'sntp_client.h']]],
+  ['sntp_5fevt_5fhandler_5ft',['sntp_evt_handler_t',['../a00219.html#ga621e7e3f9f0eb29b05f53cd8b1cc72a7',1,'sntp_client.h']]],
+  ['socket_5fid',['socket_id',['../a00107.html#a57cd813df4dd11d7b473bb1ede142ca5',1,'udp6_socket_t']]],
+  ['src_5fcntxt_5fid',['src_cntxt_id',['../a00090.html#af2120e3fd9f7511df85135c7801f4a15',1,'iot_context_id_t']]],
+  ['srcaddr',['srcaddr',['../a00102.html#af764ed051af5ecb0c9f93eade9f091ae',1,'ipv6_header_t']]],
+  ['srcport',['srcport',['../a00106.html#a11794483a64c5cedaf015653165a27b7',1,'udp6_header_t']]]
+];
