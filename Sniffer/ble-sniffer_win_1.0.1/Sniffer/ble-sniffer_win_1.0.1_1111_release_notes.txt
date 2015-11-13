@@ -1,0 +1,127 @@
+Release Notes
+nRF Sniffer
+
+Current version:
+===
+Version 1.0.0 RELEASE
+Date 15-july-2014
+
+- Added support for dynamic advertisement channel hop sequence
+- Added display filters for nearest devices (based on RSSI)
+- New UART protocol
+- Various bugfixes, fixing several minor bugs
+
+
+Known issues and limitations:
+- When a link is encrypted and the timing on the link is changed, there is a higher probability that the sniffer will lose the connection.
+	This appears to occur most frequently when one of the devices in the the link is a Samsung Galaxy phone.
+- Scan requests can lower the chance of the sniffer catching a connect request.
+- nrFgo Studio is known to interfere with sniffer board discovery. Close Studio and reset board if you have problems.
+- Advertising data attributes have a number of small bugs and limitations:
+  - 128b UUIDs are displayed incorrectly in the list. Look in the packet view to see the correct (but mirrored) UUID.
+  - A number of attribute types are not fully dissected.
+  - The length and type of attributes are not displayed in the dissection, but can be found in the packet view before the actual value.
+
+
+
+Previous version:
+===
+Version 0.9.7 BETA
+Date 02-may-2014
+
+- PCA10001 v1.0 is now supported
+- Sniffer API added to the release
+- Acknowledgements of Terminate packets that are piggybacked on control packets are now interpreted as ACKs.
+
+Known issues and limitations:
+- The sniffer is known to claim and not release certain serial ports while looking for the sniffer board. This seems to occur mostly with actual (not USB) ports.
+- During encryption, the sniffer can lose track of the encryption, and packets will start to be malformed. This can happen immediately, but usually does not happen for 5 minutes, and sometimes not at all.
+- Scan requests can lower the chance of the sniffer catching a connect request.
+- nrFgo Studio is known to interfere with sniffer board discovery. Close Studio and reset board if you have problems.
+- Advertising data attributes have a number of small bugs and limitations:
+	- 128b UUIDs are displayed incorrectly in the list. Look in the packet view to see the correct (but mirrored) UUID.
+	- A number of attribute types are not fully dissected.
+	- The length and type of attributes are not displayed in the dissection, but can be found in the packet view before the actual value.
+- The sniffer board can run into problems after having run for a long time (more than an hour). Try to reset the board and restart sniffer.exe and Wireshark if problems occur.
+
+
+
+Previous version:
+===
+Version 0.9.6 BETA
+Date 04-april-2014
+
+Features added:
+- Flashing from sniffer console.
+- Support for sniffing devices with public addresses.
+- Administrator rights is requested automatically.
+- Better support for Windows 8.
+- PCA10000 v1.0 is now supported.
+
+Known issues and limitations:
+- The sniffer is known to claim and not release certain serial ports while looking for the sniffer board. This seems to occur mostly with actual (not USB) ports.
+- During encryption, the sniffer can lose track of the encryption, and packets will start to be malformed. This can happen immediately, but usually does not happen for 5 minutes, and sometimes not at all.
+- Scan requests can lower the chance of the sniffer catching a connect request.
+- nrFgo Studio is known to interfere with sniffer board discovery. Close Studio and reset board if you have problems.
+- Advertising data attributes have a number of small bugs and limitations:
+	- 128b UUIDs are displayed incorrectly in the list. Look in the packet view to see the correct (but mirrored) UUID.
+	- A number of attribute types are not fully dissected.
+	- The length and type of attributes are not displayed in the dissection, but can be found in the packet view before the actual value.
+- The sniffer board can run into problems after having run for a long time (more than an hour). Try to reset the board and restart sniffer.exe and Wireshark if problems occur.
+
+Previous version:
+===
+Version 0.9.5
+SVN rev. 550
+Date 19-des-2013
+Features added:
+- Added packet counter for the UART packets sent between the host and the Sniffer.
+- Added "Hop interval" and "Sleep Clock Accuracy" dissection to CONNECT_REQ packets.
+- More stable UART communication
+- Dissection support increased for advertisement packets.
+- Support option "s" changed so that it no longer opens the web browser.
+- Minor bugfixes:
+	- The line "no of packets 8001" is no longer added to the log file.
+
+Known issues and limitations:
+- The sniffer is known to claim and not release certain serial ports while looking for the sniffer board. This seems to occur mostly with actual (not USB) ports.
+- During encryption, the sniffer can lose track of the encryption, and packets will start to be malformed. This can happen immediately, but usually does not happen for 5 minutes, and sometimes not at all.
+- Scan requests can lower the chance of the sniffer catching a connect request.
+- nrFgo Studio is known to interfere with sniffer board discovery. Close Studio and reset board if you have problems.
+- Advertising data attributes have a number of small bugs and limitations:
+	- 128b UUIDs are displayed incorrectly in the list. Look in the packet view to see the correct (but mirrored) UUID.
+	- A number of attribute types are not fully dissected.
+	- The length and type of attributes are not displayed in the dissection, but can be found in the packet view before the actual value.
+- A very small number of packets may be malformed in transit between the sniffer board and the computer. These will often show up as malformed even though CRC and MIC are OK.
+- The sniffer board can run into problems after having run for a long time (more than an hour). Try to reset the board and restart sniffer.exe and Wireshark if problems occur.
+
+Previous versions:
+===
+Version 0.9.1
+SVN rev. 534
+Date 25-nov-2013
+
+Features added:
+1. Fixed several smaller bugs in Sniffer.exe
+
+
+Known issues and limitations:
+1. Long term key is lost when board is reset. This means devices must rebond to be sniffed.
+2. The sniffer is known to claim and not release certain serial ports while looking for the sniffer board. This seems to occur mostly with actual (not USB) ports.
+3. During encryption, the sniffer can lose track of the encryption, and packets will start to be malformed. This can happen immediately, but usually does not happen for 5 minutes, and sometimes not at all.
+4. Scan requests can lower the chance of the sniffer catching a connect request.
+5. nrFgo Studio is known to interfere with sniffer board discovery. Close Studio and reset board if you have problems.
+6. Advertising data attributes have a number of small bugs and limitations:
+	- 128b UUIDs are displayed incorrectly in the list. Look in the packet view to see the correct (but mirrored) UUID.
+	- A number of attribute types are not fully dissected.
+	- The length and type of attributes are not displayed in the dissection, but can be found in the packet view before the actual value.
+7. A small number of packets may be malformed in transit between the sniffer board and the computer. These will often show up as malformed even though CRC and MIC are OK.
+8. The sniffer board can run into problems after having run for a long time (more than an hour). Try to reset the board and restart sniffer.exe and Wireshark if problems occur.
+
+
+Previous versions:
+===
+
+
+---------NOTE:---------
+Earlier versions have been moved to "release_notes up to 0.0.0.513.txt" in Release/Sniffer in repository
