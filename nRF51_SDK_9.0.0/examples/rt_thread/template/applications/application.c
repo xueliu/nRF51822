@@ -20,6 +20,9 @@
 
 #include <rtthread.h>
 
+#include "nrf_gpio.h"
+#include "boards.h"
+
 #ifdef RT_USING_FINSH
 #include <finsh.h>
 #include <shell.h>
