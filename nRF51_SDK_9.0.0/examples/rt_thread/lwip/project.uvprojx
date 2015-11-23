@@ -782,26 +782,6 @@
               <FilePath>..\..\..\external\rt_thread\components\net\lwip-1.4.1\src\core\snmp\msg_out.c</FilePath>
             </File>
             <File>
-              <FileName>icmp6.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\external\rt_thread\components\net\lwip-1.4.1\src\core\ipv6\icmp6.c</FilePath>
-            </File>
-            <File>
-              <FileName>inet6.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\external\rt_thread\components\net\lwip-1.4.1\src\core\ipv6\inet6.c</FilePath>
-            </File>
-            <File>
-              <FileName>ip6.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\external\rt_thread\components\net\lwip-1.4.1\src\core\ipv6\ip6.c</FilePath>
-            </File>
-            <File>
-              <FileName>ip6_addr.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\external\rt_thread\components\net\lwip-1.4.1\src\core\ipv6\ip6_addr.c</FilePath>
-            </File>
-            <File>
               <FileName>autoip.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\external\rt_thread\components\net\lwip-1.4.1\src\core\ipv4\autoip.c</FilePath>

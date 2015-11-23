@@ -28,6 +28,12 @@
 #include <shell.h>
 #endif
 
+#ifdef RT_USING_LWIP
+//#include <emac.h>
+#include <netif/ethernetif.h>
+extern int lwip_system_init(void);
+#endif
+
 int rt_application_init(void)
 {
 	eth_system_device_init();
