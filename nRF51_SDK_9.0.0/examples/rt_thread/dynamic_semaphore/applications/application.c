@@ -141,6 +141,7 @@ int _tc_semaphore_dynamic()
 }
 
 FINSH_FUNCTION_EXPORT(_tc_semaphore_dynamic, a dynamic semaphore example);
+MSH_CMD_EXPORT(_tc_semaphore_dynamic, a dynamic semaphore example)
 #else
 int rt_application_init()
 {
