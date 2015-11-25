@@ -1,0 +1,81 @@
+# Makefile for nRF51822 platform
+
+ifeq ($(NRF51_SDK_PATH),)
+        $(error NRF51_SDK_PATH is not defined)
+endif
+
+DEVICE_FAMILY		?= NRF51
+CPU 			?= cortex-m0
+SOC 			?= NRF51822_QFAA_CA
+SOC_VARIANT		?= xxaa
+BOARD			?= BOARD_PCA10001
+HEAP_SIZE		?= 0
+STACK_SIZE		?= 1024
+
+CROSS_COMPILE		?= arm-none-eabi-
+CC			= $(CROSS_COMPILE)gcc
+LD			= $(CROSS_COMPILE)gcc
+AR			= $(CROSS_COMPILE)ar
+SIZE			= $(CROSS_COMPILE)size
+OBJCOPY			= $(CROSS_COMPILE)objcopy
+OBJDUMP			= $(CROSS_COMPILE)objdump
+PROGRAMMER		?= nrftool
+JLINK_EXE		?= JLinkExe
+
+SDK_INCLUDE_PATH	= $(NRF51_SDK_PATH)/nrf51822/Include
+SDK_SOURCE_PATH		= $(NRF51_SDK_PATH)/nrf51822/Source
+SDK_TEMPLATE_PATH	= $(NRF51_SDK_PATH)/nrf51822/Source/templates
+
+PLATFORM_INCLUDE_PATHS	= $(SDK_INCLUDE_PATH)				\
+			  $(SDK_INCLUDE_PATH)/gcc			\
+			  $(SDK_INCLUDE_PATH)/app_common		\
+			  $(SDK_INCLUDE_PATH)/ble/softdevice		\
+			  $(PLATFORM_PATH)
+
+PLATFORM_CFLAGS		= -mcpu=$(CPU)					\
+			  -D$(DEVICE_FAMILY)				\
+			  -D$(BOARD)					\
+			  -D$(SOC)					\
+			  -mfloat-abi=soft				\
+			  --std=gnu99					\
+			  -mthumb					\
+			  -Werror					\
+			  -Wall						\
+			  -c
+
+PLATFORM_ASMFLAGS	= $(PLATFORM_CFLAGS)				\
+			  -x assembler-with-cpp				\
+			  -D__HEAP_SIZE=$(HEAP_SIZE)			\
+			  -D__STACK_SIZE=$(STACK_SIZE)
+
+LINKER_SCRIPT		= gcc_nrf51_blank_$(SOC_VARIANT).ld
+PLATFORM_LDFLAGS	= -T$(SDK_TEMPLATE_PATH)/gcc/$(LINKER_SCRIPT)	\
+			  -L$(SDK_TEMPLATE_PATH)/gcc			\
+			  --specs=nano.specs				\
+			  -mabi=aapcs					\
+			  -Xlinker					\
+			  -Map=$(BUILD_PATH)/$(PROJECT_TARGET).map	\
+			  -mthumb					\
+			  -mcpu=$(CPU)
+
+PLATFORM_SOURCE_PATHS	= $(SDK_SOURCE_PATH)				\
+			  $(SDK_SOURCE_PATH)/app_common			\
+			  $(SDK_TEMPLATE_PATH)				\
+			  $(SDK_TEMPLATE_PATH/gcc)			\
+			  $(PLATFORM_PATH)
+
+PLATFORM_SOURCE_FILES	= system_nrf51.c				\
+			  app_uart.c					\
+			  app_fifo.c					\
+			  app_gpiote.c					\
+			  delay.c					\
+			  log.c						\
+			  timer.c					\
+			  radio.c                                       \
+                          random.c					\
+                          evtloop.c					\
+                          ll-plat.c
+
+PLATFORM_ASM_PATHS	= $(SDK_TEMPLATE_PATH)/gcc
+
+PLATFORM_ASM_FILES	= gcc_startup_nrf51.s

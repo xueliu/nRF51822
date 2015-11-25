@@ -24,3 +24,12 @@ void nrf_delay_ms(uint32_t volatile number_of_ms)
         nrf_delay_us(999);
     }
 }
+
+void delay(uint32_t us)
+{
+	while(us != 0)
+    {
+        us--;
+        nrf_delay_us(999);
+    }
+}

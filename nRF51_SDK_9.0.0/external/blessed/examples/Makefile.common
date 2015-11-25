@@ -1,0 +1,87 @@
+# Common Makefile to build applications
+
+-include ../../Makefile.config
+
+ifeq ($(PLATFORM),)
+        $(error PLATFORM is not defined)
+endif
+
+ifeq ($(BLESSED_PATH),)
+	BLESSED_PATH = ../..
+endif
+
+PLATFORM_PATH		= $(BLESSED_PATH)/platform/$(PLATFORM)
+include $(PLATFORM_PATH)/Makefile.platform
+
+ifeq ($(PROJECT_TARGET),)
+        $(error PROJECT_TARGET is not defined)
+endif
+
+BUILD_PATH		= build
+BLESSED_BUILD		= $(BLESSED_PATH)/$(BUILD_PATH)
+LIBBLESSED		= $(BLESSED_BUILD)/libblessed.a
+
+INCLUDE_PATHS		= $(PLATFORM_INCLUDE_PATHS)			\
+			  $(PROJECT_INCLUDE_PATHS)			\
+			  $(BLESSED_PATH)/stack				\
+			  $(BLESSED_PATH)/include
+
+INCLUDES		= $(addprefix -I, $(INCLUDE_PATHS))
+
+CFLAGS			= -O2 -Wall $(PLATFORM_CFLAGS)			\
+			  $(PROJECT_CFLAGS)				\
+			  $(INCLUDES)
+
+LDFLAGS			= $(PLATFORM_LDFLAGS)				\
+			  $(PROJECT_LDFLAGS)
+
+SOURCE_PATHS		= $(PROJECT_SOURCE_PATHS)			\
+			  $(PLATFORM_SOURCE_PATHS)
+SOURCE_FILES		= $(PROJECT_SOURCE_FILES)
+ASM_PATHS		= $(PROJECT_ASM_PATHS)
+ASM_FILES		= $(PROJECT_ASM_FILES)
+
+C_OBJ_FILES		= $(addprefix $(BUILD_PATH)/, $(SOURCE_FILES:.c=.o))
+ASM_OBJ_FILES		= $(addprefix $(BUILD_PATH)/, $(ASM_FILES:.s=.o))
+
+vpath %.c $(SOURCE_PATHS)
+vpath %.s $(ASM_PATHS)
+
+all: $(BUILD_PATH) $(BUILD_PATH)/$(PROJECT_TARGET).bin
+
+$(BUILD_PATH)/$(PROJECT_TARGET).bin: $(BUILD_PATH)/$(PROJECT_TARGET).out
+	@echo -e "OBJCOPY\t $@"
+	@$(OBJCOPY) -Obinary	$(BUILD_PATH)/$(PROJECT_TARGET).out	\
+				$(BUILD_PATH)/$(PROJECT_TARGET).bin
+
+$(BUILD_PATH)/$(PROJECT_TARGET).out: $(C_OBJ_FILES) $(ASM_OBJ_FILES)
+	@echo -e "LD\t $@"
+	@$(LD) $(LDFLAGS) $(C_OBJ_FILES) $(ASM_OBJ_FILES) $(LIBBLESSED) -o $@
+	@echo -e "SIZE\t $@"
+	@$(SIZE) $@
+
+$(BUILD_PATH)/%.o: %.c
+	@echo -e "CC\t $<"
+	@$(CC) $(CFLAGS) -o $@ $<
+
+$(BUILD_PATH)/%.o: %.s
+	@echo -e "CC\t $<"
+	@$(CC) $(ASMFLAGS) -o $@ $<
+
+$(BUILD_PATH):
+	@echo -e "MKDIR\t $@"
+	@-mkdir $@
+
+install: all
+	@echo -e "INSTALL\t $(PROJECT_TARGET)"
+	@$(PROGRAMMER) --jlinkexe $(JLINK_EXE) flash $(BUILD_PATH)/$(PROJECT_TARGET).bin
+
+erase:
+	@echo -e "ERASE"
+	@$(PROGRAMMER) --jlinkexe $(JLINK_EXE) erase
+
+clean:
+	@echo -e "CLEAN"
+	@rm -rf $(BUILD_PATH) *.log
+
+.PHONY: all install erase clean
