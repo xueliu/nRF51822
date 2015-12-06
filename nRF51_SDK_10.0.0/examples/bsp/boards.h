@@ -38,6 +38,8 @@
   #include "wt51822.h"
 #elif defined(BOARD_N5DK1)
   #include "n5_starterkit.h"
+#elif defined(BOARD_AKII)
+  #include "nrf51822akii.h"
 #elif defined(BOARD_CUSTOM)
   #include "custom_board.h"
 #else
