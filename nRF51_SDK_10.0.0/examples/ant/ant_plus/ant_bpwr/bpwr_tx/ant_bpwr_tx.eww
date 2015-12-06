@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\power_only\auto\pca10028\iar\ant_bpwr_tx_power_only_auto_s210_pca10028.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\crank_torque\auto\pca10028\iar\ant_bpwr_tx_crank_torque_auto_s210_pca10028.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\power_only\button\pca10028\iar\ant_bpwr_tx_power_only_button_s210_pca10028.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\wheel_torque\auto\pca10028\iar\ant_bpwr_tx_wheel_torque_auto_s210_pca10028.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\crank_torque\button\pca10028\iar\ant_bpwr_tx_crank_torque_button_s210_pca10028.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\wheel_torque\button\pca10028\iar\ant_bpwr_tx_wheel_torque_button_s210_pca10028.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\power_only\auto\n5_starterkit\iar\ant_bpwr_tx_power_only_auto_s210_n5_starterkit.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\power_only\button\n5_starterkit\iar\ant_bpwr_tx_power_only_button_s210_n5_starterkit.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\crank_torque\auto\n5_starterkit\iar\ant_bpwr_tx_crank_torque_auto_s210_n5_starterkit.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\wheel_torque\auto\n5_starterkit\iar\ant_bpwr_tx_wheel_torque_auto_s210_n5_starterkit.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\crank_torque\button\n5_starterkit\iar\ant_bpwr_tx_crank_torque_button_s210_n5_starterkit.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\wheel_torque\button\n5_starterkit\iar\ant_bpwr_tx_wheel_torque_button_s210_n5_starterkit.ewp</path>
+  </project>
+  <batchBuild/>
+</workspace>

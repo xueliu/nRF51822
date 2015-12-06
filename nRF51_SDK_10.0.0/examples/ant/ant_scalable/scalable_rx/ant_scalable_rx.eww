@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\pca10028\iar\ant_scalable_rx_s210_pca10028.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\n5_starterkit\iar\ant_scalable_rx_s210_n5_starterkit.ewp</path>
+  </project>
+  <batchBuild/>
+</workspace>

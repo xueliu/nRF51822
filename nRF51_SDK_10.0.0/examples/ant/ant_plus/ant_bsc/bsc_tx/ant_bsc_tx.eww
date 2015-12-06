@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\speed\auto\pca10028\iar\ant_bsc_tx_speed_auto_s210_pca10028.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\speed\button\pca10028\iar\ant_bsc_tx_speed_button_s210_pca10028.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\cadence\auto\pca10028\iar\ant_bsc_tx_cadence_auto_s210_pca10028.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\combined\auto\pca10028\iar\ant_bsc_tx_combined_auto_s210_pca10028.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\cadence\button\pca10028\iar\ant_bsc_tx_cadence_button_s210_pca10028.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\speed\auto\n5_starterkit\iar\ant_bsc_tx_speed_auto_s210_n5_starterkit.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\combined\button\pca10028\iar\ant_bsc_tx_combined_button_s210_pca10028.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\speed\button\n5_starterkit\iar\ant_bsc_tx_speed_button_s210_n5_starterkit.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\cadence\auto\n5_starterkit\iar\ant_bsc_tx_cadence_auto_s210_n5_starterkit.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\combined\auto\n5_starterkit\iar\ant_bsc_tx_combined_auto_s210_n5_starterkit.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\cadence\button\n5_starterkit\iar\ant_bsc_tx_cadence_button_s210_n5_starterkit.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\combined\button\n5_starterkit\iar\ant_bsc_tx_combined_button_s210_n5_starterkit.ewp</path>
+  </project>
+  <batchBuild/>
+</workspace>
