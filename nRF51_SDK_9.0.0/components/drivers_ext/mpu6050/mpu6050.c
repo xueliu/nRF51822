@@ -17,7 +17,7 @@
 #include "app_error.h"
 #include "mpu6050.h"
 
-/*lint ++flb "Enter library region" */
+#include "app_uart.h"
 
 #define ADDRESS_WHO_AM_I          (0x75U) // !< WHO_AM_I register identifies the device. Expected value is 0x68.
 //#define ADDRESS_SIGNAL_PATH_RESET (0x68U) // !<
