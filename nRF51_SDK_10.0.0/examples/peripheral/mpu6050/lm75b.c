@@ -30,7 +30,6 @@ uint8_t const lm75b_temp_reg_addr  = LM75B_REG_TEMP;
 uint8_t const lm75b_tos_reg_addr   = LM75B_REG_TOS;
 uint8_t const lm75b_thyst_reg_addr = LM75B_REG_THYST;
 
-
 // Set default configuration of LM75B - write 0 to Conf register.
 static uint8_t const default_config[] = { LM75B_REG_CONF, 0 };
 app_twi_transfer_t const lm75b_init_transfers[LM75B_INIT_TRANSFER_COUNT] =

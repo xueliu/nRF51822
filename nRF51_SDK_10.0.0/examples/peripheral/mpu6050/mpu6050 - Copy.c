@@ -36,17 +36,6 @@
 //#define ADDRESS_SIGNAL_PATH_RESET (0x68U) // !<
 
 static const uint8_t expected_who_am_i = 0x68U; // !< Expected value to get from WHO_AM_I register.
-uint8_t const mpu6050_who_i_am_reg_addr 	= MPU6050_RA_WHO_AM_I;
-uint8_t const mpu6050_smplrt_div_reg_addr 	= MPU6050_RA_SMPLRT_DIV;
-uint8_t const mpu6050_config_reg_addr 		= MPU6050_RA_CONFIG;
-uint8_t const mpu6050_pwr_mgmt_1_reg_addr 	= MPU6050_RA_PWR_MGMT_1;
-uint8_t const mpu6050_gyro_config_reg_addr 	= MPU6050_RA_GYRO_CONFIG;
-uint8_t const mpu6050_user_ctrl 			= MPU6050_RA_USER_CTRL;
-uint8_t const mpu6050_int_pin_cfg 			= MPU6050_RA_INT_PIN_CFG;
-uint8_t const mpu6050_int_enable 			= MPU6050_RA_INT_ENABLE;
-uint8_t const mpu6050_accel_config 			= MPU6050_RA_ACCEL_CONFIG;
-uint8_t const mpu6050_accel_xout_h_reg_addr = MPU6050_RA_ACCEL_XOUT_H;
-
 //static uint8_t       m_device_address;          // !< Device address in bits [7:1]
 
 //MPU6050_Result_t MPU6050_Init(MPU6050_t* DataStruct, MPU6050_Device_t DeviceNumber, MPU6050_Accelerometer_t AccelerometerSensitivity, MPU6050_Gyroscope_t GyroscopeSensitivity) {

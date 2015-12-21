@@ -25,6 +25,18 @@ extern "C" {
 
 #include "nrf_drv_twi.h"
 
+
+extern uint8_t const mpu6050_xout_reg_addr;
+
+/* Default I2C address */
+#define MPU6050_I2C_ADDR			0x68
+	
+/**
+ * @defgroup MPU6050_Macros
+ * @brief    Library defines
+ * @{
+ */
+
 /**
  * @brief  Data rates predefined constants
  * @{
@@ -37,11 +49,94 @@ extern "C" {
 #define MPU6050_DataRate_250Hz      31  /*!< Sample rate set to 250 Hz */
 #define MPU6050_DataRate_125Hz      63  /*!< Sample rate set to 125 Hz */
 #define MPU6050_DataRate_100Hz      79  /*!< Sample rate set to 100 Hz */
+/**
+ * @}
+ */
+ 
+/**
+ * @}
+ */
+/**
+ * @defgroup MPU6050_Typedefs
+ * @brief    Library Typedefs
+ * @{
+ */
 
+/**
+ * @brief  MPU6050 can have 2 different slave addresses, depends on it's input AD0 pin
+ *         This feature allows you to use 2 different sensors with this library at the same time
+ */
+typedef enum _MPU6050_Device_t {
+	MPU6050_Device_0 = 0x00, /*!< AD0 pin is set to low */
+	MPU6050_Device_1 = 0x02  /*!< AD0 pin is set to high */
+} MPU6050_Device_t;
+
+/**
+ * @brief  MPU6050 result enumeration	
+ */
+typedef enum _MPU6050_Result_t {
+	MPU6050_Result_Ok = 0x00,          /*!< Everything OK */
+	MPU6050_Result_Error,              /*!< Unknown error */
+	MPU6050_Result_DeviceNotConnected, /*!< There is no device with valid slave address */
+	MPU6050_Result_DeviceInvalid       /*!< Connected device with address is not MPU6050 */
+} MPU6050_Result_t;
+
+/**
+ * @brief  Parameters for accelerometer range
+ */
+typedef enum _MPU6050_Accelerometer_t {
+	MPU6050_Accelerometer_2G 	= 0x00, /*!< Range is +- 2G */
+	MPU6050_Accelerometer_4G 	= 0x01, /*!< Range is +- 4G */
+	MPU6050_Accelerometer_8G 	= 0x02, /*!< Range is +- 8G */
+	MPU6050_Accelerometer_16G 	= 0x03 	/*!< Range is +- 16G */
+} MPU6050_Accelerometer_t;
+
+/**
+ * @brief  Parameters for gyroscope range
+ */
+typedef enum _MPU6050_Gyroscope_t {
+	MPU6050_Gyroscope_250s 	= 0x00,	/*!< Range is +- 250 degrees/s */
+	MPU6050_Gyroscope_500s 	= 0x01, /*!< Range is +- 500 degrees/s */
+	MPU6050_Gyroscope_1000s = 0x02, /*!< Range is +- 1000 degrees/s */
+	MPU6050_Gyroscope_2000s = 0x03  /*!< Range is +- 2000 degrees/s */
+} MPU6050_Gyroscope_t;
+
+/**
+ * @brief  Main MPU6050 structure
+ */
+typedef struct _MPU6050_t {
+	/* Private */
+	uint8_t Address;         /*!< I2C address of device. Only for private use */
+	float Gyro_Mult;         /*!< Gyroscope corrector from raw data to "degrees/s". Only for private use */
+	float Acce_Mult;         /*!< Accelerometer corrector from raw data to "g". Only for private use */
+	/* Public */
+	int16_t Accelerometer_X; /*!< Accelerometer value X axis */
+	int16_t Accelerometer_Y; /*!< Accelerometer value Y axis */
+	int16_t Accelerometer_Z; /*!< Accelerometer value Z axis */
+	int16_t Gyroscope_X;     /*!< Gyroscope value X axis */
+	int16_t Gyroscope_Y;     /*!< Gyroscope value Y axis */
+	int16_t Gyroscope_Z;     /*!< Gyroscope value Z axis */
+	float Temperature;       /*!< Temperature in degrees */
+} MPU6050_t;
+
+/**
+ * @brief  Interrupts union and structure
+ */
+typedef union _MPU6050_Interrupt_t {
+	struct {
+		uint8_t DataReady:1;       /*!< Data ready interrupt */
+		uint8_t reserved2:2;       /*!< Reserved bits */
+		uint8_t Master:1;          /*!< Master interrupt. Not enabled with library */
+		uint8_t FifoOverflow:1;    /*!< FIFO overflow interrupt. Not enabled with library */
+		uint8_t reserved1:1;       /*!< Reserved bit */
+		uint8_t MotionDetection:1; /*!< Motion detected interrupt */
+		uint8_t reserved0:1;       /*!< Reserved bit */
+	} F;
+	uint8_t Status;
+} MPU6050_Interrupt_t;
 
 #define MPU6050_ADDRESS_AD0_LOW     0x68 // address pin low (GND), default for InvenSense evaluation board
 #define MPU6050_ADDRESS_AD0_HIGH    0x69 // address pin high (VCC)
-
 #define MPU6050_DEFAULT_ADDRESS     MPU6050_ADDRESS_AD0_LOW
 
 #define MPU6050_RA_XG_OFFS_TC       0x00 //[7] PWR_MODE, [6:1] XG_OFFS_TC, [0] OTP_BNK_VLD
@@ -418,18 +513,6 @@ extern "C" {
 #define MPU6050_DMP_MEMORY_BANK_SIZE    256
 #define MPU6050_DMP_MEMORY_CHUNK_SIZE   16
 
-extern uint8_t const mpu6050_who_i_am_reg_addr;
-extern uint8_t const mpu6050_smplrt_div_reg_addr;
-extern uint8_t const mpu6050_config_reg_addr;
-extern uint8_t const mpu6050_pwr_mgmt_1_reg_addr;
-extern uint8_t const mpu6050_gyro_config_reg_addr;
-extern uint8_t const mpu6050_user_ctrl;
-extern uint8_t const mpu6050_int_pin_cfg;
-extern uint8_t const mpu6050_int_enable;
-extern uint8_t const mpu6050_accel_config;
-
-extern uint8_t const mpu6050_accel_xout_h_reg_addr;
-
 /** @file
 * @brief MPU6050 gyro/accelerometer driver.
 *
@@ -478,19 +561,41 @@ ret_code_t mpu6050_register_read(const nrf_drv_twi_t * twi, uint8_t register_add
 bool mpu6050_verify_product_id(const nrf_drv_twi_t * twi);
 
 #define MPU6050_READ(p_reg_addr, p_buffer, byte_cnt) \
-    APP_TWI_WRITE(MPU6050_DEFAULT_ADDRESS, p_reg_addr, 1,        APP_TWI_NO_STOP), \
-    APP_TWI_READ (MPU6050_DEFAULT_ADDRESS, p_buffer,   byte_cnt, 0)
-	
-#define MPU6050_READ_ACCEL(p_buffer) \
-	MPU6050_READ(&mpu6050_accel_xout_h_reg_addr, p_buffer, 6)
+    APP_TWI_WRITE(MPU6050_I2C_ADDR, p_reg_addr, 1,        APP_TWI_NO_STOP), \
+    APP_TWI_READ (MPU6050_I2C_ADDR, p_buffer,   byte_cnt, 0)
 	
 #define MPU6050_WRITE(p_reg_addr, p_buffer, byte_cnt) \
-    APP_TWI_WRITE(MPU6050_DEFAULT_ADDRESS, p_reg_addr, 1,        APP_TWI_NO_STOP), \
-	APP_TWI_WRITE(MPU6050_DEFAULT_ADDRESS, p_buffer,   byte_cnt, 0)
+    APP_TWI_WRITE(MPU6050_I2C_ADDR, p_reg_addr, 1,        APP_TWI_NO_STOP), \
+
+//#define MMA7660_READ_XYZ_AND_TILT(p_buffer) \
+//    MMA7660_READ(&mma7660_xout_reg_addr, p_buffer, 4)
 
 #define MPU6050_INIT_TRANSFER_COUNT 1
 extern app_twi_transfer_t const
-    mpu6050_init_transfers[MPU6050_INIT_TRANSFER_COUNT];
+    mpu6050_init_transfers[MPU6050_INIT_TRANSFER_COUNT];	
+
+ret_code_t mpu6050_register_write(const nrf_drv_twi_t * twi, uint8_t register_address, uint8_t value)
+{
+    uint8_t w2_data[2];
+	//uint32_t err_code;
+	
+    w2_data[0] = register_address;
+    w2_data[1] = value;
+    //return twi_master_transfer(m_device_address, w2_data, 2, TWI_ISSUE_STOP);
+	return nrf_drv_twi_tx(twi, MPU6050_DEFAULT_ADDRESS, w2_data, sizeof(w2_data), false);
+	//APP_ERROR_CHECK(err_code);
+}
+
+ret_code_t mpu6050_register_read(const nrf_drv_twi_t * twi, uint8_t register_address, uint8_t * destination, uint8_t number_of_bytes)
+{
+    //bool transfer_succeeded;
+	uint32_t err_code;
+	
+    err_code = nrf_drv_twi_tx(twi, MPU6050_DEFAULT_ADDRESS, &register_address, 	1, 					false);
+    err_code = nrf_drv_twi_rx(twi, MPU6050_DEFAULT_ADDRESS, destination, 		number_of_bytes, 	false);
+	
+	return err_code;
+}
 
 /* C++ detection */
 #ifdef __cplusplus

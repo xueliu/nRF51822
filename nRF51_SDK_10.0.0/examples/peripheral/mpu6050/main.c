@@ -42,13 +42,15 @@
 #define APP_TIMER_PRESCALER         0
 #define APP_TIMER_OP_QUEUE_SIZE     2
 
+/* Who I am register value */
+#define MPU6050_I_AM				0x68
+
 // Pin number for indicating communication with sensors.
 #ifdef BSP_LED_3
     #define READ_ALL_INDICATOR  BSP_LED_3
 #else
     #error "Please choose an output pin"
 #endif
-
 
 static app_twi_t m_app_twi = APP_TWI_INSTANCE(0);
 
@@ -58,6 +60,7 @@ static nrf_drv_rtc_t const m_rtc = NRF_DRV_RTC_INSTANCE(0);
 // Buffer for data read from sensors.
 #define BUFFER_SIZE  11
 static uint8_t m_buffer[BUFFER_SIZE];
+static uint8_t mpu6050_reg_config[8]={0x00,0x00,0x03,0x10,0x00,0x32,0x01,0x00};
 
 // Data structures needed for averaging of data read from sensors.
 // [max 32, otherwise "int16_t" won't be sufficient to hold the sum
@@ -283,6 +286,118 @@ static void read_mma7660_registers(void)
     APP_ERROR_CHECK(app_twi_schedule(&m_app_twi, &transaction));
 }
 
+static void verify_mpu6050_cb(ret_code_t result, void * p_user_data)
+{
+    if (result != NRF_SUCCESS)
+    {
+        printf("verify_mpu6050_cb - error: %d\r\n", (int)result);
+        return;
+    }
+	if (m_buffer[0] != MPU6050_I_AM)
+    {
+		printf("MPU605 not found");
+    }
+    else
+    {
+        printf("MPU605 found");
+    }
+//    print_data("MPU6050:", m_buffer, 1);
+}
+static void verify_mpu6050(void)
+{
+    // [these structures have to be "static" - they cannot be placed on stack
+    //  since the transaction is scheduled and these structures most likely
+    //  will be referred after this function returns]
+    static app_twi_transfer_t const transfers[] =
+    {
+        MPU6050_READ(&mpu6050_who_i_am_reg_addr,
+            m_buffer, 1)
+    };
+    static app_twi_transaction_t const transaction =
+    {
+        .callback            = verify_mpu6050_cb,
+        .p_user_data         = NULL,
+        .p_transfers         = transfers,
+        .number_of_transfers = sizeof(transfers)/sizeof(transfers[0])
+    };
+
+    APP_ERROR_CHECK(app_twi_schedule(&m_app_twi, &transaction));
+}
+
+static void initil_mpu6050_cb(ret_code_t result, void * p_user_data)
+{
+    if (result != NRF_SUCCESS)
+    {
+        printf("verify_mpu6050_cb - error: %d\r\n", (int)result);
+        return;
+    }
+}
+static void initil_mpu6050(void)
+{
+
+	
+    static app_twi_transfer_t const transfers[] =
+    {
+        MPU6050_WRITE(&mpu6050_smplrt_div_reg_addr, &mpu6050_reg_config[0], 	1),
+		MPU6050_WRITE(&mpu6050_config_reg_addr, 	&mpu6050_reg_config[1], 	1),
+		MPU6050_WRITE(&mpu6050_pwr_mgmt_1_reg_addr, &mpu6050_reg_config[2], 	1),
+		MPU6050_WRITE(&mpu6050_gyro_config_reg_addr,&mpu6050_reg_config[3],		1),
+		MPU6050_WRITE(&mpu6050_user_ctrl,			&mpu6050_reg_config[4],		1),
+		MPU6050_WRITE(&mpu6050_int_pin_cfg,			&mpu6050_reg_config[5],		1),
+		MPU6050_WRITE(&mpu6050_int_enable,			&mpu6050_reg_config[6],		1),
+		MPU6050_WRITE(&mpu6050_accel_config,		&mpu6050_reg_config[7],		1),
+    };
+    static app_twi_transaction_t const transaction =
+    {
+        .callback            = initil_mpu6050_cb,
+        .p_user_data         = NULL,
+        .p_transfers         = transfers,
+        .number_of_transfers = sizeof(transfers)/sizeof(transfers[0])
+    };
+
+    APP_ERROR_CHECK(app_twi_schedule(&m_app_twi, &transaction));
+}
+
+void mpu6050_read_accel_cb(ret_code_t result, void * p_user_data)
+{
+	int16_t pACC_X;
+	int16_t pACC_Y;
+	int16_t pACC_Z;
+    if (result != NRF_SUCCESS)
+    {
+        printf("read_all_cb - error: %d\r\n", (int)result);
+        return;
+    }
+
+		pACC_X = (m_buffer[0] << 8) | m_buffer[1];
+			if(pACC_X & 0x8000) pACC_X-=65536;
+			
+		pACC_Y= (m_buffer[2] << 8) | m_buffer[3];
+			if(pACC_Y & 0x8000) pACC_Y-=65536;
+		
+		pACC_Z = (m_buffer[4] << 8) | m_buffer[5];
+			if(pACC_Z & 0x8000) pACC_Z-=65536;
+	
+		printf("%d;%d;%d\n\r", pACC_X, pACC_Y, pACC_Z);
+}
+static void mpu6050_read_accel(void)
+{
+    nrf_gpio_pin_toggle(READ_ALL_INDICATOR);
+
+    static app_twi_transfer_t const transfers[] =
+    {
+		MPU6050_READ_ACCEL(m_buffer)
+    };
+    static app_twi_transaction_t const transaction =
+    {
+        .callback            = mpu6050_read_accel_cb,
+        .p_user_data         = NULL,
+        .p_transfers         = transfers,
+        .number_of_transfers = sizeof(transfers) / sizeof(transfers[0])
+    };
+
+    APP_ERROR_CHECK(app_twi_schedule(&m_app_twi, &transaction));
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Buttons handling (by means of BSP).
@@ -349,7 +464,7 @@ static void uart_config(void)
         CTS_PIN_NUMBER,
         APP_UART_FLOW_CONTROL_ENABLED,
         false,
-        UART_BAUDRATE_BAUDRATE_Baud38400
+        UART_BAUDRATE_BAUDRATE_Baud115200
     };
 
     APP_UART_FIFO_INIT(&comm_params,
@@ -369,12 +484,14 @@ static void twi_config(void)
 {
     uint32_t err_code;
 
-    nrf_drv_twi_config_t const config = {
-       .scl                = ARDUINO_SCL_PIN,
-       .sda                = ARDUINO_SDA_PIN,
-       .frequency          = NRF_TWI_FREQ_100K,
-       .interrupt_priority = APP_IRQ_PRIORITY_LOW
-    };
+//    nrf_drv_twi_config_t const config = {
+//       .scl                = TWI0_CONFIG_SCL, // ARDUINO_SCL_PIN,
+//       .sda                = TWI0_CONFIG_SDA, //ARDUINO_SDA_PIN,
+//       .frequency          = NRF_TWI_FREQ_100K,
+//       .interrupt_priority = APP_IRQ_PRIORITY_LOW
+//    };
+	
+	const nrf_drv_twi_config_t 	config 	= NRF_DRV_TWI_DEFAULT_CONFIG(0);
 
     APP_TWI_INIT(&m_app_twi, &config, MAX_PENDING_TRANSACTIONS, err_code);
     APP_ERROR_CHECK(err_code);
@@ -390,10 +507,11 @@ static void rtc_handler(nrf_drv_rtc_int_type_t int_type)
     {
         // On each RTC tick (their frequency is set in "nrf_drv_config.h")
         // we read data from our sensors.
-        read_all();
+//        read_all();
+		mpu6050_read_accel();
     }
 }
-static void rtc_config(void)
+static void rtc_config(void) 
 {
     uint32_t err_code;
 
@@ -433,18 +551,20 @@ int main(void)
     bsp_config();
     uart_config();
 
-    printf("\n\rTWI master example\r\n");
+//    printf("\n\rTWI master example\r\n");
 
     twi_config();
 
     // Initialize sensors.
-    APP_ERROR_CHECK(app_twi_perform(&m_app_twi, lm75b_init_transfers,
-        LM75B_INIT_TRANSFER_COUNT, NULL));
-    APP_ERROR_CHECK(app_twi_perform(&m_app_twi, mma7660_init_transfers,
-        MMA7660_INIT_TRANSFER_COUNT, NULL));
+//    APP_ERROR_CHECK(app_twi_perform(&m_app_twi, lm75b_init_transfers,
+//        LM75B_INIT_TRANSFER_COUNT, NULL));
+//    APP_ERROR_CHECK(app_twi_perform(&m_app_twi, mma7660_init_transfers,
+//        MMA7660_INIT_TRANSFER_COUNT, NULL));
 
     rtc_config();
-
+	
+//	verify_mpu6050();
+	initil_mpu6050();
     while (true)
     {
         __WFI();
