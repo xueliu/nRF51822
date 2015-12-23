@@ -54,13 +54,15 @@
 
 static app_twi_t m_app_twi = APP_TWI_INSTANCE(0);
 
-static nrf_drv_rtc_t const m_rtc = NRF_DRV_RTC_INSTANCE(0);
+static nrf_drv_rtc_t 		const m_rtc 		= NRF_DRV_RTC_INSTANCE(0);
+static nrf_drv_rtc_config_t const m_rtc_config 	= NRF_DRV_RTC_DEFAULT_CONFIG(0);
+
 
 
 // Buffer for data read from sensors.
 #define BUFFER_SIZE  11
 static uint8_t m_buffer[BUFFER_SIZE];
-static uint8_t mpu6050_reg_config[8]={0x00,0x00,0x03,0x10,0x00,0x32,0x01,0x00};
+static uint8_t mpu6050_reg_config[8]={0x00,0x03,0x03,0x10,0x00,0x32,0x01,0x00};
 
 // Data structures needed for averaging of data read from sensors.
 // [max 32, otherwise "int16_t" won't be sufficient to hold the sum
@@ -230,9 +232,6 @@ static void read_lm75b_registers_cb(ret_code_t result, void * p_user_data)
 }
 static void read_lm75b_registers(void)
 {
-    // [these structures have to be "static" - they cannot be placed on stack
-    //  since the transaction is scheduled and these structures most likely
-    //  will be referred after this function returns]
     static app_twi_transfer_t const transfers[] =
     {
         LM75B_READ(&lm75b_conf_reg_addr,  &m_buffer[0], 1),
@@ -305,9 +304,6 @@ static void verify_mpu6050_cb(ret_code_t result, void * p_user_data)
 }
 static void verify_mpu6050(void)
 {
-    // [these structures have to be "static" - they cannot be placed on stack
-    //  since the transaction is scheduled and these structures most likely
-    //  will be referred after this function returns]
     static app_twi_transfer_t const transfers[] =
     {
         MPU6050_READ(&mpu6050_who_i_am_reg_addr,
@@ -334,8 +330,6 @@ static void initil_mpu6050_cb(ret_code_t result, void * p_user_data)
 }
 static void initil_mpu6050(void)
 {
-
-	
     static app_twi_transfer_t const transfers[] =
     {
         MPU6050_WRITE(&mpu6050_smplrt_div_reg_addr, &mpu6050_reg_config[0], 	1),
@@ -516,7 +510,9 @@ static void rtc_config(void)
     uint32_t err_code;
 
     // Initialize RTC instance with default configuration.
-    err_code = nrf_drv_rtc_init(&m_rtc, NULL, rtc_handler);
+//    err_code = nrf_drv_rtc_init(&m_rtc, NULL, rtc_handler);
+	err_code = nrf_drv_rtc_init(&m_rtc, &m_rtc_config, rtc_handler); // 31.25ms internel
+	
     APP_ERROR_CHECK(err_code);
 
     // Enable tick event and interrupt.

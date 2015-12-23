@@ -117,6 +117,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
+          <Name></Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -148,9 +149,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>489</LineNumber>
+          <LineNumber>514</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>10802</Address>
+          <Address>15738</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -159,12 +160,12 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\..\main.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\nrf51822_xxac\../../main.c\489</Expression>
+          <Expression>\\nrf51822_xxac\../../main.c\514</Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>565</LineNumber>
+          <LineNumber>518</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
