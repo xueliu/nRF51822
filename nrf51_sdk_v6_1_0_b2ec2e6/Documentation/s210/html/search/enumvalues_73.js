@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['sd_5fsoftdevice_5fdisable',['SD_SOFTDEVICE_DISABLE',['../group__t__s210___n_r_f___s_d_m___e_n_u_m_s.html#gga4528cbf3f1a34d4712822ac456b1b305ab48ef4bb34f9d37c0a7005f7b7d13692',1,'nrf_sdm.h']]],
+  ['sd_5fsoftdevice_5fenable',['SD_SOFTDEVICE_ENABLE',['../group__t__s210___n_r_f___s_d_m___e_n_u_m_s.html#gga4528cbf3f1a34d4712822ac456b1b305ab692ec521a2f791184f7a4644897f781',1,'nrf_sdm.h']]],
+  ['sd_5fsoftdevice_5fforward_5fto_5fapplication',['SD_SOFTDEVICE_FORWARD_TO_APPLICATION',['../group__t__s210___n_r_f___s_d_m___e_n_u_m_s.html#gga4528cbf3f1a34d4712822ac456b1b305ad595e89eb1ed87decee748bccf7c4294',1,'nrf_sdm.h']]],
+  ['sd_5fsoftdevice_5fis_5fenabled',['SD_SOFTDEVICE_IS_ENABLED',['../group__t__s210___n_r_f___s_d_m___e_n_u_m_s.html#gga4528cbf3f1a34d4712822ac456b1b305a6f89d282c869fd898e2c75141ac2bc5f',1,'nrf_sdm.h']]],
+  ['sleepmodenormal',['SleepmodeNormal',['../group__nrf__drivers__synaptics__touchpad.html#gga330fdbd5e3557a42f4c73c445d0f7337a2529a190fc6b8b859b7248b35f83f391',1,'synaptics_touchpad.h']]],
+  ['sleepmodesensorsleep',['SleepmodeSensorSleep',['../group__nrf__drivers__synaptics__touchpad.html#gga330fdbd5e3557a42f4c73c445d0f7337a689a10deefd36760eee23b59321bcadb',1,'synaptics_touchpad.h']]],
+  ['spi_5fmaster_5f0',['SPI_MASTER_0',['../group__spi__master__driver.html#gga84f5e5074c1cb0163acc71cd9b4d1107a1a637e7960b8f43e412847d118af139d',1,'spi_master.h']]],
+  ['spi_5fmaster_5f1',['SPI_MASTER_1',['../group__spi__master__driver.html#gga84f5e5074c1cb0163acc71cd9b4d1107a83453ab7546115900d25a83c533fb0fc',1,'spi_master.h']]],
+  ['spi_5fmaster_5fevt_5ftransfer_5fcompleted',['SPI_MASTER_EVT_TRANSFER_COMPLETED',['../group__spi__master__driver.html#gga31240c0ee79ef65d920c9d3fa8899789ac7b903657b890c123f4b51fd2a26e53e',1,'spi_master.h']]],
+  ['spi_5fmaster_5fevt_5ftransfer_5fstarted',['SPI_MASTER_EVT_TRANSFER_STARTED',['../group__spi__master__driver.html#gga31240c0ee79ef65d920c9d3fa8899789a24504bd3bcb0bb7778ee2b99dfb1f4d4',1,'spi_master.h']]],
+  ['spi_5fmaster_5fevt_5ftype_5fmax',['SPI_MASTER_EVT_TYPE_MAX',['../group__spi__master__driver.html#gga31240c0ee79ef65d920c9d3fa8899789aa4eba2079274bf69027092844ac7d161',1,'spi_master.h']]],
+  ['spi_5fmaster_5fhw_5fenabled_5fcount',['SPI_MASTER_HW_ENABLED_COUNT',['../group__spi__master__driver.html#gga84f5e5074c1cb0163acc71cd9b4d1107ad189c52211b6de22a7e6aed4d078406a',1,'spi_master.h']]],
+  ['spi_5fmaster_5fstate_5fbusy',['SPI_MASTER_STATE_BUSY',['../group__spi__master__driver.html#ggac3471b7aba2dd998dd08263d80a46d44a4a4ae82272756db931981e38786c2b3d',1,'spi_master.h']]],
+  ['spi_5fmaster_5fstate_5fdisabled',['SPI_MASTER_STATE_DISABLED',['../group__spi__master__driver.html#ggac3471b7aba2dd998dd08263d80a46d44a06bb576779307e515a0f9f1f1711f2d1',1,'spi_master.h']]],
+  ['spi_5fmaster_5fstate_5fidle',['SPI_MASTER_STATE_IDLE',['../group__spi__master__driver.html#ggac3471b7aba2dd998dd08263d80a46d44a2f2ddd197a11b1c3eac344d93accae07',1,'spi_master.h']]],
+  ['spi_5fmode_5f0',['SPI_MODE_0',['../group__lib__driver__spi__slave.html#gga1febfa1b05a4e0d259877752c6c53c33a152359b11fb4b43ed0c5485eb0ab0673',1,'spi_slave.h']]],
+  ['spi_5fmode_5f1',['SPI_MODE_1',['../group__lib__driver__spi__slave.html#gga1febfa1b05a4e0d259877752c6c53c33a7c1990cc15e9d69621be8e0e757e634c',1,'spi_slave.h']]],
+  ['spi_5fmode_5f2',['SPI_MODE_2',['../group__lib__driver__spi__slave.html#gga1febfa1b05a4e0d259877752c6c53c33a4d350945d895a4acdc45ae96b0b82fc3',1,'spi_slave.h']]],
+  ['spi_5fmode_5f3',['SPI_MODE_3',['../group__lib__driver__spi__slave.html#gga1febfa1b05a4e0d259877752c6c53c33af06ec36087996d6f328df39866ff5de6',1,'spi_slave.h']]],
+  ['spi_5fslave_5fbuffers_5fset_5fdone',['SPI_SLAVE_BUFFERS_SET_DONE',['../group__lib__driver__spi__slave.html#gga8c080d3b9fbe05708273eadef309094eae05604d49f7c5d272f2325f8405baec9',1,'spi_slave.h']]],
+  ['spi_5fslave_5fevt_5ftype_5fmax',['SPI_SLAVE_EVT_TYPE_MAX',['../group__lib__driver__spi__slave.html#gga8c080d3b9fbe05708273eadef309094ead8e6b1a309aa74e535a6a3262376743a',1,'spi_slave.h']]],
+  ['spi_5fslave_5fxfer_5fdone',['SPI_SLAVE_XFER_DONE',['../group__lib__driver__spi__slave.html#gga8c080d3b9fbe05708273eadef309094eabe9f17960cda631b4c223f50e09eff9c',1,'spi_slave.h']]],
+  ['spim_5flsb_5ffirst',['SPIM_LSB_FIRST',['../group__lib__driver__spi__slave.html#gga348be3a931288103790b15b689696f25aec8b43120ad55a6a995f3147f887b662',1,'spi_slave.h']]],
+  ['spim_5fmsb_5ffirst',['SPIM_MSB_FIRST',['../group__lib__driver__spi__slave.html#gga348be3a931288103790b15b689696f25a06efdba330b7a4d360ad97c5f26eaaed',1,'spi_slave.h']]],
+  ['svc_5fsdm_5flast',['SVC_SDM_LAST',['../group__t__s210___n_r_f___s_d_m___e_n_u_m_s.html#gga4528cbf3f1a34d4712822ac456b1b305a11216cbdd9009464a16286385173bb5a',1,'nrf_sdm.h']]]
+];

@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['uart_20module',['UART module',['../a00412.html',1,'']]],
+  ['utility_20functions_20and_20definitions',['Utility Functions and Definitions',['../a00413.html',1,'']]],
+  ['utility_20functions_20and_20definitions_20_28platform_29',['Utility Functions and Definitions (Platform)',['../a00424.html',1,'']]],
+  ['uart',['UART',['../a00007.html',1,'hardware_drivers']]],
+  ['user_20memory_20layout_20for_20queued_20writes',['User memory layout for Queued Writes',['../a00579.html',1,'']]],
+  ['user_20memory_20types',['User Memory Types',['../a00338.html',1,'']]],
+  ['uart_20example',['UART Example',['../a00051.html',1,'examples_hw_peripheral_devices']]],
+  ['uart_5fpin_5fdisconnected',['UART_PIN_DISCONNECTED',['../a00412.html#gaa790ff39126a00c4308f30f1139f4efa',1,'app_uart.h']]],
+  ['uicr_20config_20example',['UICR Config Example',['../a00052.html',1,'examples_hw_peripheral_devices']]],
+  ['uint16_5fle_5ft',['uint16_le_t',['../a00413.html#gaa6f104ea023a4a6a56ef05f30b0cfdc3',1,'app_util.h']]],
+  ['uint32_5fle_5ft',['uint32_le_t',['../a00413.html#ga634aa3136e273c2a368023ce97e73f01',1,'app_util.h']]],
+  ['uint8_5farray_5ft',['uint8_array_t',['../a00183.html',1,'']]],
+  ['unit',['unit',['../a00142.html#ab28e4dc2a48e6329df85b3f974cf4466',1,'ble_gatts_char_pf_t']]],
+  ['unit_5f0_5f625_5fms',['UNIT_0_625_MS',['../a00413.html#ggab04a0655cd1e3bcac5e8f48c18df1a57a448dcb5272567df7360a964e7c9b91b1',1,'app_util.h']]],
+  ['unit_5f10_5fms',['UNIT_10_MS',['../a00413.html#ggab04a0655cd1e3bcac5e8f48c18df1a57adfbb1465ed01976b118bae937a90cc60',1,'app_util.h']]],
+  ['unit_5f1_5f25_5fms',['UNIT_1_25_MS',['../a00413.html#ggab04a0655cd1e3bcac5e8f48c18df1a57abd6cc6c5518e69158001db0a5b3c4410',1,'app_util.h']]],
+  ['update',['update',['../a00151.html#a27015e208127d98d0600657e4f9224fc',1,'ble_gatts_read_authorize_params_t']]],
+  ['use_5fparity',['use_parity',['../a00071.html#a0851da050a073c86c13d0734e78f9d97',1,'app_uart_comm_params_t']]],
+  ['user_5fdesc_5fhandle',['user_desc_handle',['../a00140.html#a263781c226cad6bfeeb894e133b19c55',1,'ble_gatts_char_handles_t']]],
+  ['user_5fmem_5frelease',['user_mem_release',['../a00076.html#a21a25a889c763bceb2891d506331f484',1,'ble_common_evt_t']]],
+  ['user_5fmem_5frequest',['user_mem_request',['../a00076.html#a4d36c1c20a1ff24a62abba8ea73c74c8',1,'ble_common_evt_t']]],
+  ['utility_20apis',['Utility APIs',['../a00534.html',1,'']]],
+  ['uuid',['uuid',['../a00135.html#a3f00e5eb4b0f87085de2ea1e9464258b',1,'ble_gattc_service_t::uuid()'],['../a00119.html#a69ac665a39feea71fafac8a54ecf0a5e',1,'ble_gattc_char_t::uuid()'],['../a00120.html#a039854704d107784b185fb11b00b1258',1,'ble_gattc_desc_t::uuid()'],['../a00164.html#ac9ccd46e82b1b51d561f17d49282348c',1,'ble_uuid_t::uuid()']]],
+  ['uuid128',['uuid128',['../a00163.html#a13339a8ee220b2ad2f4b8e130e730407',1,'ble_uuid128_t']]]
+];

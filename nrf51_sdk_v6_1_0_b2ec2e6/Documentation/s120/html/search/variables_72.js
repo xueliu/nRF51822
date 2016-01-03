@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['rand',['rand',['../a00106.html#a5eed4e9e5a810616535ae08c4e860302',1,'ble_gap_master_id_t']]],
+  ['rd_5fauth',['rd_auth',['../a00138.html#a0d2f2743a556d382513a43607a08c057',1,'ble_gatts_attr_md_t']]],
+  ['read',['read',['../a00118.html#a1da688e4cfacf724ee7636dbf534716f',1,'ble_gatt_char_props_t::read()'],['../a00152.html#a7d0c5d0586fa2a048d724a7ededf5e18',1,'ble_gatts_rw_authorize_reply_params_t::read()'],['../a00145.html#aa2fe207fe3fe3b8d5ff5e8fbbf65f495',1,'ble_gatts_evt_rw_authorize_request_t::read()']]],
+  ['read_5fperm',['read_perm',['../a00138.html#a61a4ef92eba3a3b2b3f616557f6b74aa',1,'ble_gatts_attr_md_t']]],
+  ['read_5fpos',['read_pos',['../a00069.html#aabcc538faf2ea4a374702c9896ae52d6',1,'app_fifo_t']]],
+  ['read_5frsp',['read_rsp',['../a00129.html#afe94966527cf767c92f028de45d04e6d',1,'ble_gattc_evt_t']]],
+  ['reason',['reason',['../a00096.html#a11211be968ad2898f3dd9b4d31b5ce22',1,'ble_gap_evt_disconnected_t']]],
+  ['rel_5fdisc_5frsp',['rel_disc_rsp',['../a00129.html#ae83b3965e69f4226c8fe7586a30a4d7e',1,'ble_gattc_evt_t']]],
+  ['reliable_5fwr',['reliable_wr',['../a00117.html#a8b4bb4c79bed8c8a6d75ca0dd08b7591',1,'ble_gatt_char_ext_props_t']]],
+  ['request',['request',['../a00145.html#abc510a09418e18cc3910723fa47eec45',1,'ble_gatts_evt_rw_authorize_request_t']]],
+  ['rssi',['rssi',['../a00098.html#a7521901a129bf1516c0bab404045616e',1,'ble_gap_evt_rssi_changed_t::rssi()'],['../a00089.html#a9592fc581c5ed9fd84514c32603bb478',1,'ble_gap_evt_adv_report_t::rssi()']]],
+  ['rssi_5fchanged',['rssi_changed',['../a00102.html#a68424d2efb955bc53522dc16d3a92643',1,'ble_gap_evt_t']]],
+  ['rts_5fpin_5fno',['rts_pin_no',['../a00071.html#a836f131cb64d3cdf9831c0354483a65f',1,'app_uart_comm_params_t']]],
+  ['rx',['rx',['../a00159.html#afc4cbc758b308e6698b16650310cc52b',1,'ble_l2cap_evt_t']]],
+  ['rx_5famount',['rx_amount',['../a00182.html#a7b54206d997d599a2c3ee5751c208c58',1,'spi_slave_evt_t']]],
+  ['rx_5fbuf',['rx_buf',['../a00070.html#ab5c77995614a78b4a7baf6f5ab59bb5c',1,'app_uart_buffers_t']]],
+  ['rx_5fbuf_5fsize',['rx_buf_size',['../a00070.html#a42c5f8c78ee123d84c7de5da43f703e0',1,'app_uart_buffers_t']]],
+  ['rx_5fpin_5fno',['rx_pin_no',['../a00071.html#a30ae0cdf9181248fa08411af42a938a9',1,'app_uart_comm_params_t']]]
+];
