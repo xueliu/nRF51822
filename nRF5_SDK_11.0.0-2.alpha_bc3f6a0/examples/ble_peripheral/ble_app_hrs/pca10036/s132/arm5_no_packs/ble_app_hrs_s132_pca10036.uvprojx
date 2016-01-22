@@ -5,7 +5,7 @@
 
   <Header>### uVision Project, (C) Keil Software</Header>
 
-  <Targets>    
+  <Targets>
     <Target>
       <TargetName>nrf52832_xxaa_s132</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
@@ -14,7 +14,7 @@
         <TargetCommonOption>
           <Device>nRF52832_xxAA</Device>
           <Vendor>Nordic Semiconductor</Vendor>
-          <PackID>NordicSemiconductor.nRF_DeviceFamilyPack.8.3.1</PackID>
+          <PackID>NordicSemiconductor.nRF_DeviceFamilyPack.8.3.2</PackID>
           <PackURL>http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/</PackURL>
           <Cpu>IROM(0x00000000,0x80000) IRAM(0x20000000,0x10000) CPUTYPE("Cortex-M4") FPU2 CLOCK(64000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -84,6 +84,8 @@
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
+            <nStopA1X>0</nStopA1X>
+            <nStopA2X>0</nStopA2X>
           </AfterMake>
           <SelectedForBatchBuild>0</SelectedForBatchBuild>
           <SVCSIdString></SVCSIdString>
@@ -145,10 +147,9 @@
             <RestoreToolbox>1</RestoreToolbox>
             <RestoreTracepoints>0</RestoreTracepoints>
             <RestoreSysVw>1</RestoreSysVw>
-            <UsePdscDebugDescription>1</UsePdscDebugDescription>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>-1</TargetSelection>
+          <TargetSelection>6</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -178,6 +179,10 @@
           <Flash2>Segger\JL2CM3.dll</Flash2>
           <Flash3></Flash3>
           <Flash4></Flash4>
+          <pFcarmOut></pFcarmOut>
+          <pFcarmGrp></pFcarmGrp>
+          <pFcArmRoot></pFcArmRoot>
+          <FcArmLst>0</FcArmLst>
         </Utilities>
         <TargetArmAds>
           <ArmAdsMisc>
@@ -224,6 +229,7 @@
             <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
+            <nSecure>0</nSecure>
             <RoSelD>3</RoSelD>
             <RwSelD>5</RwSelD>
             <CodeSel>0</CodeSel>
@@ -277,7 +283,7 @@
               <IRAM>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x8000</Size>
+                <Size>0x10000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
@@ -356,6 +362,12 @@
             <wLevel>0</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
+            <uC99>0</uC99>
+            <useXO>0</useXO>
+            <v6Lang>0</v6Lang>
+            <v6LangP>0</v6LangP>
+            <vShortEn>0</vShortEn>
+            <vShortWch>0</vShortWch>
             <VariousControls>
               <MiscControls>--c99</MiscControls>
               <Define> BLE_STACK_SUPPORT_REQD NRF52_PAN_8 NRF52_PAN_9 NRF52_PAN_10 NRF52_PAN_11 NRF52_PAN_12 NRF52_PAN_15 NRF52_PAN_16 NRF52_PAN_17 NRF52_PAN_20 NRF52_PAN_23 NRF52_PAN_24 NRF52_PAN_25 NRF52_PAN_26 NRF52_PAN_27 NRF52_PAN_28 NRF52_PAN_29 NRF52_PAN_30 NRF52_PAN_32 NRF52_PAN_33 NRF52_PAN_34 NRF52_PAN_35 NRF52_PAN_36 NRF52_PAN_37 NRF52_PAN_38 NRF52_PAN_39 NRF52_PAN_40 NRF52_PAN_41 NRF52_PAN_42 NRF52_PAN_43 NRF52_PAN_44 NRF52_PAN_46 NRF52_PAN_47 NRF52_PAN_48 NRF52_PAN_49 NRF52_PAN_58 NRF52_PAN_63 NRF52_PAN_64 NRF52_PAN_65 CONFIG_GPIO_AS_PINRESET BOARD_PCA10036 NRF52_PAN_1 NRF52_PAN_2 NRF52_PAN_3 NRF52_PAN_4 NRF52_PAN_7 S132 SWI_DISABLE0 NRF52 SOFTDEVICE_PRESENT NRF_LOG_USES_UART=1</Define>
@@ -372,6 +384,7 @@
             <SwStkChk>0</SwStkChk>
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
+            <useXO>0</useXO>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define> BLE_STACK_SUPPORT_REQD NRF52_PAN_8 NRF52_PAN_9 NRF52_PAN_10 NRF52_PAN_11 NRF52_PAN_12 NRF52_PAN_15 NRF52_PAN_16 NRF52_PAN_17 NRF52_PAN_20 NRF52_PAN_23 NRF52_PAN_24 NRF52_PAN_25 NRF52_PAN_26 NRF52_PAN_27 NRF52_PAN_28 NRF52_PAN_29 NRF52_PAN_30 NRF52_PAN_32 NRF52_PAN_33 NRF52_PAN_34 NRF52_PAN_35 NRF52_PAN_36 NRF52_PAN_37 NRF52_PAN_38 NRF52_PAN_39 NRF52_PAN_40 NRF52_PAN_41 NRF52_PAN_42 NRF52_PAN_43 NRF52_PAN_44 NRF52_PAN_46 NRF52_PAN_47 NRF52_PAN_48 NRF52_PAN_49 NRF52_PAN_58 NRF52_PAN_63 NRF52_PAN_64 NRF52_PAN_65 CONFIG_GPIO_AS_PINRESET BOARD_PCA10036 NRF52_PAN_1 NRF52_PAN_2 NRF52_PAN_3 NRF52_PAN_4 NRF52_PAN_7 S132 SWI_DISABLE0 NRF52 SOFTDEVICE_PRESENT NRF_LOG_USES_UART=1</Define>
@@ -388,6 +401,7 @@
             <useFile>0</useFile>
             <TextAddressRange>0x00000000</TextAddressRange>
             <DataAddressRange>0x00000000</DataAddressRange>
+            <pXoBase></pXoBase>
             <ScatterFile></ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
@@ -437,6 +451,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -488,6 +508,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -534,6 +560,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -600,6 +632,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -646,6 +684,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -692,6 +736,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -738,6 +788,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -784,6 +840,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -830,6 +892,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -876,6 +944,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -922,6 +996,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -973,6 +1053,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1019,6 +1105,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1065,6 +1157,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1111,6 +1209,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1157,6 +1261,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1203,6 +1313,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1254,6 +1370,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1300,6 +1422,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1346,6 +1474,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1392,6 +1526,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1438,6 +1578,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1484,6 +1630,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1530,6 +1682,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1576,6 +1734,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1622,6 +1786,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1668,6 +1838,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1714,6 +1890,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1760,6 +1942,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1796,29 +1984,7 @@
                   <IncludeLibraryModules></IncludeLibraryModules>
                   <ComprImg>1</ComprImg>
                 </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
+                <FileArmAds/>
               </FileOption>
             </File>
             <File>
@@ -1857,6 +2023,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1869,8 +2041,14 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
+        </Group>
+        <Group>
+          <GroupName>::Device</GroupName>
+        </Group>
       </Groups>
-    </Target>    
+    </Target>
     <Target>
       <TargetName>flash_s132_nrf52_2.0.0-7.alpha_softdevice</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
@@ -1879,8 +2057,8 @@
         <TargetCommonOption>
           <Device>nRF52832_xxAA</Device>
           <Vendor>Nordic Semiconductor</Vendor>
-          <PackID>..</PackID>
-          <PackURL></PackURL>
+          <PackID>NordicSemiconductor.nRF_DeviceFamilyPack.8.3.2</PackID>
+          <PackURL>http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/</PackURL>
           <Cpu>IROM(0x00000000,0x80000) IRAM(0x20000000,0x10000) CPUTYPE("Cortex-M4") FPU2 CLOCK(64000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
@@ -1949,6 +2127,8 @@
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
+            <nStopA1X>0</nStopA1X>
+            <nStopA2X>0</nStopA2X>
           </AfterMake>
           <SelectedForBatchBuild>0</SelectedForBatchBuild>
           <SVCSIdString></SVCSIdString>
@@ -2010,10 +2190,9 @@
             <RestoreToolbox>1</RestoreToolbox>
             <RestoreTracepoints>0</RestoreTracepoints>
             <RestoreSysVw>1</RestoreSysVw>
-            <UsePdscDebugDescription>1</UsePdscDebugDescription>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>-1</TargetSelection>
+          <TargetSelection>7</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -2043,6 +2222,10 @@
           <Flash2>Segger\JL2CM3.dll</Flash2>
           <Flash3></Flash3>
           <Flash4></Flash4>
+          <pFcarmOut></pFcarmOut>
+          <pFcarmGrp></pFcarmGrp>
+          <pFcArmRoot></pFcArmRoot>
+          <FcArmLst>0</FcArmLst>
         </Utilities>
         <TargetArmAds>
           <ArmAdsMisc>
@@ -2089,6 +2272,7 @@
             <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
+            <nSecure>0</nSecure>
             <RoSelD>3</RoSelD>
             <RwSelD>5</RwSelD>
             <CodeSel>0</CodeSel>
@@ -2142,7 +2326,7 @@
               <IRAM>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x8000</Size>
+                <Size>0x10000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
@@ -2221,6 +2405,12 @@
             <wLevel>0</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
+            <uC99>0</uC99>
+            <useXO>0</useXO>
+            <v6Lang>0</v6Lang>
+            <v6LangP>0</v6LangP>
+            <vShortEn>0</vShortEn>
+            <vShortWch>0</vShortWch>
             <VariousControls>
               <MiscControls>--c99</MiscControls>
               <Define> BLE_STACK_SUPPORT_REQD NRF52</Define>
@@ -2237,6 +2427,7 @@
             <SwStkChk>0</SwStkChk>
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
+            <useXO>0</useXO>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define> BLE_STACK_SUPPORT_REQD NRF52</Define>
@@ -2253,6 +2444,7 @@
             <useFile>0</useFile>
             <TextAddressRange>0x00000000</TextAddressRange>
             <DataAddressRange>0x00000000</DataAddressRange>
+            <pXoBase></pXoBase>
             <ScatterFile></ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
@@ -2302,6 +2494,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2353,6 +2551,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2399,6 +2603,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2465,6 +2675,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2511,6 +2727,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2557,6 +2779,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2603,6 +2831,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2649,6 +2883,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2695,6 +2935,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2741,6 +2987,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2787,6 +3039,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2838,6 +3096,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2884,6 +3148,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2930,6 +3200,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2976,6 +3252,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3022,6 +3304,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3068,6 +3356,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3119,6 +3413,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3165,6 +3465,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3211,6 +3517,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3257,6 +3569,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3303,6 +3621,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3349,6 +3673,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3395,6 +3725,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3441,6 +3777,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3487,6 +3829,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3533,6 +3881,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3579,6 +3933,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3625,6 +3985,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3661,29 +4027,7 @@
                   <IncludeLibraryModules></IncludeLibraryModules>
                   <ComprImg>1</ComprImg>
                 </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
+                <FileArmAds/>
               </FileOption>
             </File>
             <File>
@@ -3722,6 +4066,12 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>0</vShortEn>
+                    <vShortWch>0</vShortWch>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3734,46 +4084,197 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
+          <GroupOption>
+            <CommonProperty>
+              <UseCPPCompiler>0</UseCPPCompiler>
+              <RVCTCodeConst>0</RVCTCodeConst>
+              <RVCTZI>0</RVCTZI>
+              <RVCTOtherData>0</RVCTOtherData>
+              <ModuleSelection>0</ModuleSelection>
+              <IncludeInBuild>0</IncludeInBuild>
+              <AlwaysBuild>2</AlwaysBuild>
+              <GenerateAssemblyFile>2</GenerateAssemblyFile>
+              <AssembleAssemblyFile>2</AssembleAssemblyFile>
+              <PublicsOnly>2</PublicsOnly>
+              <StopOnExitCode>11</StopOnExitCode>
+              <CustomArgument></CustomArgument>
+              <IncludeLibraryModules></IncludeLibraryModules>
+              <ComprImg>1</ComprImg>
+            </CommonProperty>
+            <GroupArmAds>
+              <Cads>
+                <interw>2</interw>
+                <Optim>0</Optim>
+                <oTime>2</oTime>
+                <SplitLS>2</SplitLS>
+                <OneElfS>2</OneElfS>
+                <Strict>2</Strict>
+                <EnumInt>2</EnumInt>
+                <PlainCh>2</PlainCh>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <wLevel>2</wLevel>
+                <uThumb>2</uThumb>
+                <uSurpInc>2</uSurpInc>
+                <uC99>2</uC99>
+                <useXO>2</useXO>
+                <v6Lang>0</v6Lang>
+                <v6LangP>0</v6LangP>
+                <vShortEn>0</vShortEn>
+                <vShortWch>0</vShortWch>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Cads>
+              <Aads>
+                <interw>2</interw>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <thumb>2</thumb>
+                <SplitLS>2</SplitLS>
+                <SwStkChk>2</SwStkChk>
+                <NoWarn>2</NoWarn>
+                <uSurpInc>2</uSurpInc>
+                <useXO>2</useXO>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Aads>
+            </GroupArmAds>
+          </GroupOption>
+        </Group>
+        <Group>
+          <GroupName>::Device</GroupName>
+          <GroupOption>
+            <CommonProperty>
+              <UseCPPCompiler>0</UseCPPCompiler>
+              <RVCTCodeConst>0</RVCTCodeConst>
+              <RVCTZI>0</RVCTZI>
+              <RVCTOtherData>0</RVCTOtherData>
+              <ModuleSelection>0</ModuleSelection>
+              <IncludeInBuild>0</IncludeInBuild>
+              <AlwaysBuild>2</AlwaysBuild>
+              <GenerateAssemblyFile>2</GenerateAssemblyFile>
+              <AssembleAssemblyFile>2</AssembleAssemblyFile>
+              <PublicsOnly>2</PublicsOnly>
+              <StopOnExitCode>11</StopOnExitCode>
+              <CustomArgument></CustomArgument>
+              <IncludeLibraryModules></IncludeLibraryModules>
+              <ComprImg>1</ComprImg>
+            </CommonProperty>
+            <GroupArmAds>
+              <Cads>
+                <interw>2</interw>
+                <Optim>0</Optim>
+                <oTime>2</oTime>
+                <SplitLS>2</SplitLS>
+                <OneElfS>2</OneElfS>
+                <Strict>2</Strict>
+                <EnumInt>2</EnumInt>
+                <PlainCh>2</PlainCh>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <wLevel>2</wLevel>
+                <uThumb>2</uThumb>
+                <uSurpInc>2</uSurpInc>
+                <uC99>2</uC99>
+                <useXO>2</useXO>
+                <v6Lang>0</v6Lang>
+                <v6LangP>0</v6LangP>
+                <vShortEn>0</vShortEn>
+                <vShortWch>0</vShortWch>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Cads>
+              <Aads>
+                <interw>2</interw>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <thumb>2</thumb>
+                <SplitLS>2</SplitLS>
+                <SwStkChk>2</SwStkChk>
+                <NoWarn>2</NoWarn>
+                <uSurpInc>2</uSurpInc>
+                <useXO>2</useXO>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Aads>
+            </GroupArmAds>
+          </GroupOption>
+        </Group>
       </Groups>
     </Target>
   </Targets>
-<RTE>
-  <packages>
-    <filter>
-      <targetInfos/>
-    </filter>
-    <package name="CMSIS" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0">
-      <targetInfos>
-        <targetInfo name="nrf52832_xxaa_s132" versionMatchMode="fixed"/>
-        <targetInfo excluded="1" name="flash_s132_nrf52_2.0.0-7.alpha_softdevice"/>
-      </targetInfos>
-    </package>
-    <package name="nRF_DeviceFamilyPack" url="http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.3.1">
-      <targetInfos>
-        <targetInfo name="nrf52832_xxaa_s132" versionMatchMode="fixed"/>
-        <targetInfo excluded="1" name="flash_s132_nrf52_2.0.0-7.alpha_softdevice"/>
-      </targetInfos>
-    </package>
-  </packages>
-  <apis/>
-  <components>
-    <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="4.3.0" condition="CMSIS Core">
-      <package name="CMSIS" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0"/>
-      <targetInfos>
-        <targetInfo name="nrf52832_xxaa_s132" versionMatchMode="fixed"/>
-        <targetInfo excluded="1" name="flash_s132_nrf52_2.0.0-7.alpha_softdevice"/>
-      </targetInfos>
-    </component>
-    <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="8.3.1" condition="nRF51 Series CMSIS Device">
-      <package name="nRF_DeviceFamilyPack" url="http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.3.1"/>
-      <targetInfos>
-        <targetInfo name="nrf52832_xxaa_s132" versionMatchMode="fixed"/>
-        <targetInfo excluded="1" name="flash_s132_nrf52_2.0.0-7.alpha_softdevice"/>
-      </targetInfos>
-    </component> 
-  </components>
-  <files> 
-  </files>
-</RTE>
+
+  <RTE>
+    <packages>
+      <filter>
+        <targetInfos/>
+      </filter>
+      <package name="CMSIS" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0">
+        <targetInfos>
+          <targetInfo name="nrf52832_xxaa_s132" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="nRF_DeviceFamilyPack" url="http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.3.1">
+        <targetInfos>
+          <targetInfo name="nrf52832_xxaa_s132" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+    </packages>
+    <apis/>
+    <components>
+      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="4.3.0" condition="CMSIS Core">
+        <package name="CMSIS" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0"/>
+        <targetInfos>
+          <targetInfo excluded="1" name="flash_s132_nrf52_2.0.0-7.alpha_softdevice"/>
+          <targetInfo name="nrf52832_xxaa_s132" versionMatchMode="fixed"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="8.3.1" condition="nRF51 Series CMSIS Device">
+        <package name="nRF_DeviceFamilyPack" url="http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.3.1"/>
+        <targetInfos>
+          <targetInfo excluded="1" name="flash_s132_nrf52_2.0.0-7.alpha_softdevice"/>
+          <targetInfo name="nrf52832_xxaa_s132" versionMatchMode="fixed"/>
+        </targetInfos>
+      </component>
+    </components>
+    <files>
+      <file attr="config" category="source" condition="ARM Compiler" name="Device\Source\arm\arm_startup_nrf52.s" version="0.0.0">
+        <instance index="0">RTE\Device\nRF52832_xxAA\arm_startup_nrf52.s</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="8.3.1" condition="nRF52 Series CMSIS Device"/>
+        <package license="License\license.txt" name="nRF_DeviceFamilyPack" schemaVersion="1.3" url="http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.3.1"/>
+        <targetInfos>
+          <targetInfo excluded="1" name="flash_s132_nrf52_2.0.0-7.alpha_softdevice"/>
+          <targetInfo name="nrf52832_xxaa_s132"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\Source\system_nrf52.c" version="0.0.0">
+        <instance index="0">RTE\Device\nRF52832_xxAA\system_nrf52.c</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="8.3.1" condition="nRF52 Series CMSIS Device"/>
+        <package license="License\license.txt" name="nRF_DeviceFamilyPack" schemaVersion="1.3" url="http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.3.1"/>
+        <targetInfos>
+          <targetInfo excluded="1" name="flash_s132_nrf52_2.0.0-7.alpha_softdevice"/>
+          <targetInfo name="nrf52832_xxaa_s132"/>
+        </targetInfos>
+      </file>
+    </files>
+  </RTE>
 
 </Project>

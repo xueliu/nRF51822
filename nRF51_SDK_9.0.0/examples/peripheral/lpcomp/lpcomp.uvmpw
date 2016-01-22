@@ -6,9 +6,11 @@
   <Header>### uVision Project, (C) Keil Software</Header>
 
   <WorkspaceName>WorkSpace</WorkspaceName>
- 
-   <project>
-    <PathAndName>pca10028\arm4\lpcomp_pca10028.uvproj</PathAndName>
+
+  <project>
+    <PathAndName>.\pca10028\arm4\lpcomp_pca10028.uvproj</PathAndName>
+    <NodeIsActive>1</NodeIsActive>
+    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
 </ProjectWorkspace>
