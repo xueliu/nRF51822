@@ -1,0 +1,43 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints/>
+ <ExecutionProfileWindow/>
+ <FrameBufferWindow>
+  <FrameBufferWindow addressText="" bufferWidth="-1" bufferHeight="-1" addressSpace="" />
+ </FrameBufferWindow>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="ble_app_hrs_s132_pca10040" name="unnamed" />
+  <ProjectSessionItem path="ble_app_hrs_s132_pca10040;ble_app_hrs_s132_pca10040" name="unnamed" />
+  <ProjectSessionItem path="ble_app_hrs_s132_pca10040;ble_app_hrs_s132_pca10040;CMSIS Files" name="unnamed" />
+  <ProjectSessionItem path="ble_app_hrs_s132_pca10040;ble_app_hrs_s132_pca10040;RTT Files" name="unnamed" />
+  <ProjectSessionItem path="ble_app_hrs_s132_pca10040;ble_app_hrs_s132_pca10040;System Files" name="unnamed" />
+  <ProjectSessionItem path="ble_app_hrs_s132_pca10040;ble_app_hrs_s132_pca10040" name="unnamed" />
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <TargetWindow programAction="" uploadFileType="" programLoadAddress="" programSize="" uploadFileName="" uploadMemoryInterface="" programFileName="" uploadStartAddress="" programFileType="" uploadSize="" programMemoryInterface="" />
+ <TraceWindow>
+  <Trace enabled="Yes" />
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never" />
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never" />
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never" />
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never" />
+ </Watch4>
+ <Files/>
+ <ARMCrossStudioWindow activeProject="ble_app_hrs_s132_pca10040" autoConnectTarget="J-Link" debugSearchFileMap="" fileDialogInitialDirectory="F:/workspace/nRF51822/nRF5_SDK_11.0.0-2.alpha_bc3f6a0/components/toolchain" fileDialogDefaultFilter="*.c" autoConnectCapabilities="1663" debugSearchPath="" buildConfiguration="Debug" />
+</session>

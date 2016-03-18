@@ -34,9 +34,6 @@
 #include "sdk_errors.h"
 #include "app_error.h"
 
-#include "SEGGER_SYSVIEW.h" 
-
-
 #define TASK_DELAY        200    /**< Task delay. Delays a LED0 task for 200 ms */
 #define TIMER_PERIOD      1000   /**< Timer period. LED1 timer will expire after 1000 ms */
 
@@ -46,9 +43,17 @@
  */
 static void vLed0Function (void *pvParameter)
 {
+	portTickType xLastWakeTime;
+	const portTickType xFrequency = 20;
+	
+	// Initialise the xLastWakeTime variable with the current time.
+	xLastWakeTime = xTaskGetTickCount();
+	
     UNUSED_PARAMETER(pvParameter);
     for( ;; )
     {
+		// Wait for the next cycle
+		vTaskDelayUntil(&xLastWakeTime, xFrequency);
         nrf_gpio_pin_toggle(BSP_LED_0);
         vTaskDelay(TASK_DELAY); // Delay a task for a given number of ticks
 
@@ -84,9 +89,6 @@ int main(void)
     nrf_gpio_pin_set(BSP_LED_1);
     nrf_gpio_pin_set(BSP_LED_2);
     nrf_gpio_pin_set(BSP_LED_3);
-	
-	SEGGER_SYSVIEW_Conf(); /* Configure and initialize SystemView */
-
 	
     UNUSED_VARIABLE(xTaskCreate( vLed0Function, "L0", configMINIMAL_STACK_SIZE + 200, NULL, 2, &xLed0Handle ));    // LED0 task creation
     xLed1Handle = xTimerCreate( "L1", TIMER_PERIOD, pdTRUE, NULL, vLed1Callback );                                 // LED1 timer creation

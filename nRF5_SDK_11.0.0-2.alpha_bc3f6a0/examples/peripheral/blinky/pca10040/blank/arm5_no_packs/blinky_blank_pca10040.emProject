@@ -1,0 +1,63 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="blinky_blank_pca10040" target="8" version="2">
+  <project Name="blinky_blank_pca10040">
+    <configuration
+      Name="Common"
+      Target="nRF52832_xxAA"
+      arm_architecture="v7EM"
+      arm_core_type="Cortex-M4"
+      arm_endian="Little"
+      arm_fpu_type="FPv4-SP-D16"
+      arm_linker_heap_size="1024"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="1024"
+      arm_simulator_memory_simulation_parameter="ROM;0x00000000;0x00080000;RAM;0x20000000;0x00010000"
+      c_preprocessor_definitions=";BSP_DEFINES_ONLY;NRF52_PAN_53;NRF52_PAN_15;NRF52_PAN_54;NRF52_PAN_20;NRF52_PAN_55;NRF52_PAN_30;NRF52_PAN_58;NRF52_PAN_31;NRF52_PAN_62;NRF52_PAN_36;NRF52_PAN_63;NRF52_PAN_51;NRF52_PAN_64;CONFIG_GPIO_AS_PINRESET;BOARD_PCA10040;NRF52_PAN_12;NRF52"
+      c_user_include_directories="$(PackagesDir)/CMSIS_4/CMSIS/Include;../../../config/blinky_blank_pca10040;../../../config;../../../../../../components/drivers_nrf/delay;../../../../../../components/drivers_nrf/hal;../../../../../../components/toolchain;../../../../../../components/device;../../../../../bsp;../../.."
+      debug_target_connection="J-Link"
+      linker_memory_map_file="$(StudioDir)/samples/MemoryMap_CM.xml"
+      linker_memory_map_macros="FLASH_START=0x00000000;FLASH_SIZE=0x00080000;SRAM_START=0x20000000;SRAM_SIZE=0x00010000"
+      linker_output_format="hex"
+      linker_section_placement_file="$(StudioDir)/targets/Cortex_M/flash_placement.xml"
+      project_directory=""
+      project_type="Executable"
+      property_groups_file_path="JLink/propertyGroups_CM.xml" />
+    <folder Name="Source Files">
+      <folder Name="Application">
+        <file file_name="../../../main.c" />
+      </folder>
+      <folder Name="Documentation">
+        <file file_name="../../../Abstract.txt" />
+        <file file_name="../../../license.txt" />
+      </folder>
+      <folder Name="nRF_Drivers">
+        <file file_name="../../../../../../components/drivers_nrf/delay/nrf_delay.c" />
+      </folder>
+      <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
+    </folder>
+    <folder Name="RTT Files">
+      <file file_name="$(StudioDir)/samples/SEGGER_RTT.c" />
+      <file file_name="$(StudioDir)/samples/SEGGER_RTT.h" />
+      <file file_name="$(StudioDir)/samples/SEGGER_RTT_Conf.h" />
+      <file file_name="$(StudioDir)/samples/SEGGER_RTT_SES.c" />
+    </folder>
+    <folder Name="System Files">
+      <file file_name="$(StudioDir)/source/thumb_crt0.s" />
+      <file file_name="$(StudioDir)/samples/Cortex_M_Startup.s">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="../../../../../../components/toolchain/system_nrf52.c" />
+      <file file_name="ses_nrf52_startup.s" />
+    </folder>
+  </project>
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG"
+    gcc_debugging_level="Level 3"
+    gcc_optimization_level="None" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_debugging_level="Level 1"
+    gcc_optimization_level="Level 1" />
+</solution>

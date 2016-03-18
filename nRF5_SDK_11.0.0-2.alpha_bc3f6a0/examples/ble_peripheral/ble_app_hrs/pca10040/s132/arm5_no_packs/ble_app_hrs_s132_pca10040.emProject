@@ -1,0 +1,117 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="ble_app_hrs_s132_pca10040" target="8" version="2">
+  <project Name="ble_app_hrs_s132_pca10040" template_name="nRF_EXE">
+    <configuration
+      Name="Common"
+      Target="nRF52832_xxAA"
+      c_preprocessor_definitions=";BLE_STACK_SUPPORT_REQD;NRF52_PAN_53;NRF52_PAN_15;NRF52_PAN_54;NRF52_PAN_20;NRF52_PAN_55;NRF52_PAN_30;NRF52_PAN_58;NRF52_PAN_31;NRF52_PAN_62;NRF52_PAN_36;NRF52_PAN_63;NRF52_PAN_51;NRF52_PAN_64;CONFIG_GPIO_AS_PINRESET;BOARD_PCA10040;NRF52_PAN_12;S132;SWI_DISABLE0;NRF52;SOFTDEVICE_PRESENT;NRF_LOG_USES_UART=1"
+      c_user_include_directories="$(PackagesDir)/CMSIS_4/CMSIS/Include;../../../config/ble_app_hrs_s132_pca10040;../../../config;../../../../../../components/ble/ble_advertising;../../../../../../components/ble/ble_services/ble_bas;../../../../../../components/ble/ble_services/ble_dis;../../../../../../components/ble/ble_services/ble_hrs;../../../../../../components/ble/common;../../../../../../components/ble/device_manager;../../../../../../components/drivers_ext/segger_rtt;../../../../../../components/drivers_nrf/common;../../../../../../components/drivers_nrf/config;../../../../../../components/drivers_nrf/delay;../../../../../../components/drivers_nrf/gpiote;../../../../../../components/drivers_nrf/hal;../../../../../../components/drivers_nrf/pstorage;../../../../../../components/drivers_nrf/uart;../../../../../../components/libraries/button;../../../../../../components/libraries/fifo;../../../../../../components/libraries/sensorsim;../../../../../../components/libraries/timer;../../../../../../components/libraries/trace;../../../../../../components/libraries/uart;../../../../../../components/libraries/util;../../../../../../components/softdevice/common/softdevice_handler;../../../../../../components/softdevice/s132/headers;../../../../../../components/softdevice/s132/headers/nrf52;../../../../../../components/toolchain;../../../../../bsp" project_directory=""
+      project_type="Executable" />
+    <folder Name="Source Files">
+      <folder Name="Application">
+        <file file_name="../../../main.c" />
+      </folder>
+      <folder Name="Board Support">
+        <file file_name="../../../../../bsp/bsp.c" />
+        <file file_name="../../../../../bsp/bsp_btn_ble.c" />
+      </folder>
+      <folder Name="Documentation">
+        <file file_name="../../../Abstract.txt" />
+        <file file_name="../../../license.txt" />
+      </folder>
+      <folder Name="nRF_BLE">
+        <file file_name="../../../../../../components/ble/common/ble_advdata.c" />
+        <file file_name="../../../../../../components/ble/ble_advertising/ble_advertising.c" />
+        <file file_name="../../../../../../components/ble/ble_services/ble_bas/ble_bas.c" />
+        <file file_name="../../../../../../components/ble/common/ble_conn_params.c" />
+        <file file_name="../../../../../../components/ble/ble_services/ble_dis/ble_dis.c" />
+        <file file_name="../../../../../../components/ble/ble_services/ble_hrs/ble_hrs.c" />
+        <file file_name="../../../../../../components/ble/common/ble_srv_common.c" />
+        <file file_name="../../../../../../components/ble/device_manager/device_manager_peripheral.c" />
+      </folder>
+      <folder Name="nRF_Drivers">
+        <file file_name="../../../../../../components/libraries/uart/app_uart_fifo.c" />
+        <file file_name="../../../../../../components/drivers_nrf/delay/nrf_delay.c" />
+        <file file_name="../../../../../../components/drivers_nrf/common/nrf_drv_common.c" />
+        <file file_name="../../../../../../components/drivers_nrf/gpiote/nrf_drv_gpiote.c" />
+        <file file_name="../../../../../../components/drivers_nrf/uart/nrf_drv_uart.c" />
+        <file file_name="../../../../../../components/drivers_nrf/pstorage/pstorage.c" />
+      </folder>
+      <folder Name="nRF_Libraries">
+        <file file_name="../../../../../../components/drivers_ext/segger_rtt/RTT_Syscalls_KEIL.c" />
+        <file file_name="../../../../../../components/drivers_ext/segger_rtt/SEGGER_RTT.c" />
+        <file file_name="../../../../../../components/drivers_ext/segger_rtt/SEGGER_RTT_printf.c" />
+        <file file_name="../../../../../../components/libraries/button/app_button.c" />
+        <file file_name="../../../../../../components/libraries/util/app_error.c" />
+        <file file_name="../../../../../../components/libraries/fifo/app_fifo.c" />
+        <file file_name="../../../../../../components/libraries/timer/app_timer.c" />
+        <file file_name="../../../../../../components/libraries/trace/app_trace.c" />
+        <file file_name="../../../../../../components/libraries/util/nrf_assert.c" />
+        <file file_name="../../../../../../components/libraries/util/nrf_log.c" />
+        <file file_name="../../../../../../components/libraries/uart/retarget.c" />
+        <file file_name="../../../../../../components/libraries/sensorsim/sensorsim.c" />
+      </folder>
+      <folder Name="nRF_SoftDevice">
+        <file file_name="../../../../../../components/softdevice/s132/doc/s132_nrf52_2.0.0-7.alpha_licence_agreement.txt" />
+        <file file_name="../../../../../../components/softdevice/common/softdevice_handler/softdevice_handler.c" />
+      </folder>
+    </folder>
+  </project>
+  <project Name="ble_app_hrs_s132_pca10040" template_name="nRF_EXE">
+    <configuration
+      Name="Common"
+      Target="nRF52832_xxAA"
+      c_preprocessor_definitions=";BLE_STACK_SUPPORT_REQD;NRF52"
+      c_user_include_directories="$(PackagesDir)/CMSIS_4/CMSIS/Include;../../../config/ble_app_hrs_s132_pca10040;../../../config;../../../../../../components/toolchain" project_directory=""
+      project_type="Executable" />
+    <folder Name="Source Files">
+      <folder Name="Application">
+        <file file_name="../../../main.c" />
+      </folder>
+      <folder Name="Board Support">
+        <file file_name="../../../../../bsp/bsp.c" />
+        <file file_name="../../../../../bsp/bsp_btn_ble.c" />
+      </folder>
+      <folder Name="Documentation">
+        <file file_name="../../../Abstract.txt" />
+        <file file_name="../../../license.txt" />
+      </folder>
+      <folder Name="nRF_BLE">
+        <file file_name="../../../../../../components/ble/common/ble_advdata.c" />
+        <file file_name="../../../../../../components/ble/ble_advertising/ble_advertising.c" />
+        <file file_name="../../../../../../components/ble/ble_services/ble_bas/ble_bas.c" />
+        <file file_name="../../../../../../components/ble/common/ble_conn_params.c" />
+        <file file_name="../../../../../../components/ble/ble_services/ble_dis/ble_dis.c" />
+        <file file_name="../../../../../../components/ble/ble_services/ble_hrs/ble_hrs.c" />
+        <file file_name="../../../../../../components/ble/common/ble_srv_common.c" />
+        <file file_name="../../../../../../components/ble/device_manager/device_manager_peripheral.c" />
+      </folder>
+      <folder Name="nRF_Drivers">
+        <file file_name="../../../../../../components/libraries/uart/app_uart_fifo.c" />
+        <file file_name="../../../../../../components/drivers_nrf/delay/nrf_delay.c" />
+        <file file_name="../../../../../../components/drivers_nrf/common/nrf_drv_common.c" />
+        <file file_name="../../../../../../components/drivers_nrf/gpiote/nrf_drv_gpiote.c" />
+        <file file_name="../../../../../../components/drivers_nrf/uart/nrf_drv_uart.c" />
+        <file file_name="../../../../../../components/drivers_nrf/pstorage/pstorage.c" />
+      </folder>
+      <folder Name="nRF_Libraries">
+        <file file_name="../../../../../../components/drivers_ext/segger_rtt/RTT_Syscalls_KEIL.c" />
+        <file file_name="../../../../../../components/drivers_ext/segger_rtt/SEGGER_RTT.c" />
+        <file file_name="../../../../../../components/drivers_ext/segger_rtt/SEGGER_RTT_printf.c" />
+        <file file_name="../../../../../../components/libraries/button/app_button.c" />
+        <file file_name="../../../../../../components/libraries/util/app_error.c" />
+        <file file_name="../../../../../../components/libraries/fifo/app_fifo.c" />
+        <file file_name="../../../../../../components/libraries/timer/app_timer.c" />
+        <file file_name="../../../../../../components/libraries/trace/app_trace.c" />
+        <file file_name="../../../../../../components/libraries/util/nrf_assert.c" />
+        <file file_name="../../../../../../components/libraries/util/nrf_log.c" />
+        <file file_name="../../../../../../components/libraries/uart/retarget.c" />
+        <file file_name="../../../../../../components/libraries/sensorsim/sensorsim.c" />
+      </folder>
+      <folder Name="nRF_SoftDevice">
+        <file file_name="../../../../../../components/softdevice/s132/doc/s132_nrf52_2.0.0-7.alpha_licence_agreement.txt" />
+        <file file_name="../../../../../../components/softdevice/common/softdevice_handler/softdevice_handler.c" />
+      </folder>
+    </folder>
+  </project>
+</solution>
